@@ -34,7 +34,7 @@ describe('VTEXHttpClient tests', () => {
     });
   }));
 
-  test('performRequest, with post method, performs the request', () => new Promise((done) => {
+  test('performRequest, with post method with body, performs the request', () => new Promise((done) => {
     const path: string = '/api/oms/pvt/orders/orderId/changes';
     const method: string = 'POST';
     const requestBody: any = JSON.parse(readFileSync(getFilepath('vtexRequests/registerChangeOnOrder.json'), 'utf-8'));
