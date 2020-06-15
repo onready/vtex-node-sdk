@@ -25,9 +25,10 @@ export class VTEX {
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
+   * @param {string} environment Default: 'stable'
    */
-  constructor(store: string, appKey: string, appToken: string) {
+  constructor(store: string, appKey: string, appToken: string, environment: string = 'stable') {
     VTEX.validate(store, appKey, appToken);
-    this.#vtexCredentials = new VtexCredentials(store, appKey, appToken);
+    this.#vtexCredentials = new VtexCredentials(store, appKey, appToken, environment);
   }
 }

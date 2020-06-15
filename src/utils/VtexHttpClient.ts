@@ -11,8 +11,8 @@ export class VtexHttpClient {
    */
   constructor(vtexCredentials: VtexCredentials) {
     this.#defaultRequestOptions = {
-      hostname: `${vtexCredentials.store}.vtexcommercestable.com.br/api`,
-      port: 80,
+      hostname: `${vtexCredentials.store}.vtexcommerce${vtexCredentials.environment}.com.br`,
+      port: 443,
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -27,7 +27,7 @@ export class VtexHttpClient {
    * @param {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} method
    * @param {any} body
    */
-  performRequest(path: string, method: string, body: any): Promise<VtexHttpResponse> {
+  performRequest(path: string, method: string, body?: any): Promise<VtexHttpResponse> {
     return new Promise((resolve, reject) => {
       const requestOptions: https.RequestOptions = {
         ...this.#defaultRequestOptions,
@@ -43,7 +43,8 @@ export class VtexHttpClient {
 
         response.on('end', () => {
           if (response.statusCode) {
-            resolve(new VtexHttpResponse(response.statusCode, JSON.parse(responseBody)));
+            const jsonResponse = typeof responseBody === 'object' ? JSON.parse(responseBody) : null;
+            resolve(new VtexHttpResponse(response.statusCode, jsonResponse));
           } else {
             reject();
           }
