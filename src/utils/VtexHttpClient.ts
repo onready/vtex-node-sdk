@@ -4,13 +4,13 @@ import { VtexCredentials } from '../VtexCredentials';
 import { VtexHttpResponse } from './VtexHttpResponse';
 
 export class VtexHttpClient {
-  readonly #defaultRequestOptions: https.RequestOptions;
+  private readonly defaultRequestOptions: https.RequestOptions;
 
   /**
    * @param {VtexCredentials} vtexCredentials
    */
   constructor(vtexCredentials: VtexCredentials) {
-    this.#defaultRequestOptions = {
+    this.defaultRequestOptions = {
       hostname: `${vtexCredentials.store}.vtexcommerce${vtexCredentials.environment}.com.br`,
       port: 443,
       headers: {
@@ -30,7 +30,7 @@ export class VtexHttpClient {
   performRequest(path: string, method: string, body?: any): Promise<VtexHttpResponse> {
     return new Promise((resolve, reject) => {
       const requestOptions: https.RequestOptions = {
-        ...this.#defaultRequestOptions,
+        ...this.defaultRequestOptions,
         path,
         method,
       };

@@ -1,13 +1,13 @@
-export class VtexHttpResponse {
+export class VtexHttpResponse<T = any> {
   status: number;
 
-  body: any;
+  body: T;
 
   /**
    * @param {number} status
-   * @param {any} body
+   * @param {T} body
    */
-  constructor(status: number, body: any) {
+  constructor(status: number, body: T) {
     this.status = status;
     this.body = body;
   }

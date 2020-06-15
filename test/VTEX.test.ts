@@ -10,6 +10,7 @@ describe('VTEX tests', () => {
 
     expect(instance).not.toBe(null);
     expect(instance.oms).not.toBe(null);
+    expect(instance.oms.orders).not.toBe(null);
     done();
   }));
 

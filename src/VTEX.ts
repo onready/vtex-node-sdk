@@ -21,7 +21,10 @@ export class VTEX {
     }
   }
 
-  readonly #oms: OMS;
+  /**
+   * OMS Module
+   */
+  readonly oms: OMS;
 
   /**
    * @param {string} store
@@ -37,13 +40,6 @@ export class VTEX {
     const vtexHttpClient: VtexHttpClient = new VtexHttpClient(vtexCredentials);
 
     // Create needed modules
-    this.#oms = new OMS(vtexHttpClient);
-  }
-
-  /**
-   * OMS Module
-   */
-  get oms(): OMS {
-    return this.#oms;
+    this.oms = new OMS(vtexHttpClient);
   }
 }
