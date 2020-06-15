@@ -44,9 +44,16 @@ export class VtexHttpClient {
         response.on('end', () => {
           if (response.statusCode) {
             const jsonResponse = typeof responseBody === 'object' ? JSON.parse(responseBody) : null;
-            resolve(new VtexHttpResponse(response.statusCode, jsonResponse));
+            const vtexHttpResponse: VtexHttpResponse = new VtexHttpResponse(
+              response.statusCode, jsonResponse,
+            );
+            if (response.statusCode < 400) {
+              resolve(vtexHttpResponse);
+            } else {
+              reject(vtexHttpResponse);
+            }
           } else {
-            reject();
+            reject(new Error('Request failed'));
           }
         });
       });
