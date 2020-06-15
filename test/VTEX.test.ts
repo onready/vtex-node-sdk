@@ -9,6 +9,7 @@ describe('VTEX tests', () => {
     const instance = new VTEX(store, appKey, appSecret);
 
     expect(instance).not.toBe(null);
+    expect(instance.oms).not.toBe(null);
     done();
   }));
 

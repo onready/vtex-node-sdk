@@ -1,4 +1,6 @@
 import { VtexCredentials } from './VtexCredentials';
+import { VtexHttpClient } from './utils/VtexHttpClient';
+import { OMS } from './modules/OMS';
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -19,7 +21,7 @@ export class VTEX {
     }
   }
 
-  readonly #vtexCredentials: VtexCredentials;
+  readonly #oms: OMS;
 
   /**
    * @param {string} store
@@ -29,6 +31,19 @@ export class VTEX {
    */
   constructor(store: string, appKey: string, appToken: string, environment: string = 'stable') {
     VTEX.validate(store, appKey, appToken);
-    this.#vtexCredentials = new VtexCredentials(store, appKey, appToken, environment);
+    const vtexCredentials: VtexCredentials = new VtexCredentials(
+      store, appKey, appToken, environment,
+    );
+    const vtexHttpClient: VtexHttpClient = new VtexHttpClient(vtexCredentials);
+
+    // Create needed modules
+    this.#oms = new OMS(vtexHttpClient);
+  }
+
+  /**
+   * OMS Module
+   */
+  get oms(): OMS {
+    return this.#oms;
   }
 }
