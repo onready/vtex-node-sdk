@@ -1,8 +1,9 @@
 {
-  "name": "vtex-node-sdk",
+  "name": "@onreadydesa/vtex-node-sdk",
   "version": "1.0.0-alpha",
   "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
+  "private": false,
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -20,13 +20,13 @@
 ### Installation
 
 ```
-npm install vtex-node-sdk --save
+npm install @onreadydesa/vtex-node-sdk --save
 ```
 
 or
 
 ```
-yarn add vtex-node-sdk
+yarn add @onreadydesa/vtex-node-sdk
 ```
 
 ### Basic usage example
