@@ -13,6 +13,7 @@ describe('VTEX tests', () => {
     expect(instance.oms.orders).not.toBe(null);
     expect(instance.oms.invoice).not.toBe(null);
     expect(instance.oms.tracking).not.toBe(null);
+    expect(instance.oms.payment).not.toBe(null);
     done();
   }));
 
