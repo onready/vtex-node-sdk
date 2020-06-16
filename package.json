@@ -1,9 +1,14 @@
 {
   "name": "vtex-node-sdk",
-  "version": "1.0.0",
-  "description": "VTEX Node SDK",
+  "version": "1.0.0-alpha",
+  "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/onready/vtex-node-sdk",
+    "type": "git"
+  },
+  "homepage": "https://github.com/onready/vtex-node-sdk",
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest",
