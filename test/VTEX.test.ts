@@ -17,6 +17,7 @@ describe('VTEX tests', () => {
     expect(instance.oms.feed).not.toBe(null);
     expect(instance.oms.orderHook).not.toBe(null);
     expect(instance.oms.exportOrderReport).not.toBe(null);
+    expect(instance.oms.userOrders).not.toBe(null);
     done();
   }));
 
