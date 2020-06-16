@@ -75,7 +75,7 @@ try {
 By default, the SDK makes all requests to `vtexcommercestable` environment. If you want to use another environment (For example, `vtexcommercebeta`), you can pass an extra argument like this:
 
 ```javascript
-const { VTEX } = require('vtex-node-sdk')
+const { VTEX } = require('@onreadydesa/vtex-node-sdk')
 
 const vtex = new Vtex('store name', 'app key', 'app token', 'beta');
 ```
