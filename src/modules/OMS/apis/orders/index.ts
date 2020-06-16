@@ -8,7 +8,7 @@ import { AddLogInOrderRequest } from './requests/AddLogInOrderRequest';
 import { ListOrderAttachmentResponse } from './responses/ListOrderAttachmentResponse';
 
 export class Orders extends AbstractApi {
-  private static readonly BASE_PATH = '/api/oms/pvt/orders';
+  private static readonly BASE_PATH: string = '/api/oms/pvt/orders';
 
   /**
    * Lists order details by searching through order ID.

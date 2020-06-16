@@ -6,7 +6,7 @@ import { SendTrackingNumberRequest } from './requests/SendTrackingNumberRequest'
 import { SendTrackingNumberResponse } from './responses/SendTrackingNumberResponse';
 
 export class Invoice extends AbstractApi {
-  private static readonly BASE_PATH = '/api/oms/pvt/orders/{orderId}/invoice';
+  private static readonly BASE_PATH: string = '/api/oms/pvt/orders/{orderId}/invoice';
 
   /**
    * Sends Order invoice notifications.
