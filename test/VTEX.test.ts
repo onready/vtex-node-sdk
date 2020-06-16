@@ -23,6 +23,7 @@ describe('VTEX tests', () => {
     expect(instance.logistics.shippingPolicies).not.toBe(null);
     expect(instance.logistics.carriers).not.toBe(null);
     expect(instance.logistics.docks).not.toBe(null);
+    expect(instance.logistics.warehouses).not.toBe(null);
     done();
   }));
 
