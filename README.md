@@ -34,12 +34,12 @@ yarn add @onreadydesa/vtex-node-sdk
 First, import the SDK:
 
 ```javascript
-const { VTEX } = require('vtex-node-sdk');
+const { VTEX } = require('@onreadydesa/vtex-node-sdk');
 ```
 
 ##### Using ES6 imports
 ```javascript
-import { VTEX } from 'vtex-node-sdk';
+import { VTEX } from '@onreadydesa/vtex-node-sdk';
 ```
 
 Then, use the SDK like this:
