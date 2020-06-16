@@ -1,5 +1,7 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/VTEX_Logo.svg/1200px-VTEX_Logo.svg.png" width="300" alt="Nest Logo" /></a>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/VTEX_Logo.svg/1200px-VTEX_Logo.svg.png" width="300" alt="VTEX Logo" style="margin-right: 20px" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" width="200" alt="Node Logo" style="margin-left: 20px" />
+  
 </p>
 
 ## VTEX NODE SDK
@@ -8,6 +10,8 @@
 - :muscle: 0 dependencies. It uses the native `https` Node module.
 - :tada: Promise based.
 - :dizzy: Type definitions for all VTEX requests and responses.
+
+<ins>**Note**</ins>: *<strong>This is not a VTEX official package, we are VTEX Partners since 2017 and we developed this to collaborate with VTEX Community.</strong>*
 
 ### Requirements
 
@@ -83,6 +87,7 @@ The final goal is to implement all VTEX Rest Apis. Feel free to contribute.
 API | Implemented
 :------------: | :-------------:|
 OMS | :white_check_mark: |
+Logistics | Comming soon... |
 Antifraud Provider | :x: |
 Catalog | :x: |
 Checkout | :x: |
@@ -92,7 +97,6 @@ Giftcard | :x: |
 Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
 License Manager | :x: |
-Logistics | :x: |
 Master Data (V2) | :x: |
 Payment Provider Protocol  | :x: |
 Payments Gateway  | :x: |
