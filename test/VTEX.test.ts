@@ -21,6 +21,8 @@ describe('VTEX tests', () => {
     expect(instance.oms.userOrders).not.toBe(null);
 
     expect(instance.logistics.shippingPolicies).not.toBe(null);
+    expect(instance.logistics.carriers).not.toBe(null);
+    expect(instance.logistics.docks).not.toBe(null);
     done();
   }));
 
