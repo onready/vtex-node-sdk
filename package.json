@@ -4,11 +4,22 @@
   "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/onready/vtex-node-sdk",
+    "url": "https://github.com/onready/vtex-node-sdk.git",
     "type": "git"
   },
   "homepage": "https://github.com/onready/vtex-node-sdk",
+  "bugs": {
+    "url": "https://github.com/onready/vtex-node-sdk/issues",
+    "email": "desarrollo@onready.com.ar"
+  },
+  "keywords": [
+    "vtex",
+    "vtex-sdk",
+    "vtex-node-sdk"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest",
@@ -32,5 +43,8 @@
     "rimraf": "3.0.2",
     "ts-jest": "26.1.0",
     "typescript": "3.9.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }
