@@ -3,6 +3,7 @@ import { ShippingPolicies } from './apis/shipping-policies';
 import { Carriers } from './apis/carriers';
 import { Docks } from './apis/docks';
 import { Warehouses } from './apis/warehouses';
+import { Inventory } from './apis/inventory';
 
 export class Logistics {
   /**
@@ -25,10 +26,16 @@ export class Logistics {
    */
   readonly warehouses: Warehouses;
 
+  /**
+   * Inventory API
+   */
+  readonly inventory: Inventory;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.shippingPolicies = new ShippingPolicies(vtexHttpClient);
     this.carriers = new Carriers(vtexHttpClient);
     this.docks = new Docks(vtexHttpClient);
     this.warehouses = new Warehouses(vtexHttpClient);
+    this.inventory = new Inventory(vtexHttpClient);
   }
 }
