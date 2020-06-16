@@ -4,10 +4,10 @@
 
 ## VTEX NODE SDK
 
-:hammer: Built 100% with Typescript.
-:muscle: 0 dependencies. It uses the native `https` Node module.
-:tada: Promise based.
-:dizzy: Type definitions for all VTEX requests and responses.
+- :hammer: Built 100% with Typescript.
+- :muscle: 0 dependencies. It uses the native `https` Node module.
+- :tada: Promise based.
+- :dizzy: Type definitions for all VTEX requests and responses.
 
 ### Requirements
 
