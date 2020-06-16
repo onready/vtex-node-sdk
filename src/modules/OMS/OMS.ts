@@ -5,6 +5,7 @@ import { Tracking } from './apis/tracking';
 import { Payment } from './apis/payment';
 import { Feed } from './apis/feed/v3';
 import { OrderHook } from './apis/order-hook';
+import { ExportOrderReport } from './apis/export-order-report';
 
 export class OMS {
   /**
@@ -37,6 +38,11 @@ export class OMS {
    */
   readonly orderHook: OrderHook;
 
+  /**
+   * Export order report API
+   */
+  readonly exportOrderReport: ExportOrderReport;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.orders = new Orders(vtexHttpClient);
     this.invoice = new Invoice(vtexHttpClient);
@@ -44,5 +50,6 @@ export class OMS {
     this.payment = new Payment(vtexHttpClient);
     this.feed = new Feed(vtexHttpClient);
     this.orderHook = new OrderHook(vtexHttpClient);
+    this.exportOrderReport = new ExportOrderReport(vtexHttpClient);
   }
 }
