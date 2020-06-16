@@ -1,4 +1,4 @@
 export interface AddLogInOrderRequest {
-  source: string;
-  message: string;
+  source?: string;
+  message?: string;
 }
