@@ -27,6 +27,7 @@ describe('VTEX tests', () => {
     expect(instance.logistics.inventory).not.toBe(null);
     expect(instance.logistics.holidays).not.toBe(null);
     expect(instance.logistics.reservations).not.toBe(null);
+    expect(instance.logistics.sla).not.toBe(null);
     done();
   }));
 
