@@ -7,6 +7,7 @@ import { Inventory } from './apis/inventory';
 import { Holidays } from './apis/holidays';
 import { Reservations } from './apis/reservations';
 import { SLA } from './apis/SLA';
+import { PickupPoints } from './apis/pickup-points';
 
 export class Logistics {
   /**
@@ -45,6 +46,11 @@ export class Logistics {
   readonly reservations: Reservations;
 
   /**
+   * Pickup Points API
+   */
+  readonly pickupPoints: PickupPoints;
+
+  /**
    * SLA API
    */
   readonly sla: SLA;
@@ -58,5 +64,6 @@ export class Logistics {
     this.holidays = new Holidays(vtexHttpClient);
     this.reservations = new Reservations(vtexHttpClient);
     this.sla = new SLA(vtexHttpClient);
+    this.pickupPoints = new PickupPoints(vtexHttpClient);
   }
 }
