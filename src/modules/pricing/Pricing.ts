@@ -1,6 +1,7 @@
 import { VtexHttpClient } from '../../utils/VtexHttpClient';
 import { PriceTables } from './apis/price-tables';
 import { PricesAndFixedPrices } from './apis/prices-and-fixed-prices';
+import { PricingConfig } from './apis/pricing-config';
 
 export class Pricing {
   /**
@@ -13,8 +14,14 @@ export class Pricing {
    */
   readonly pricesAndFixedPrices: PricesAndFixedPrices;
 
+  /**
+   * Pricing Configuration API
+   */
+  readonly pricingConfig: PricingConfig;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.priceTables = new PriceTables(vtexHttpClient);
     this.pricesAndFixedPrices = new PricesAndFixedPrices(vtexHttpClient);
+    this.pricingConfig = new PricingConfig(vtexHttpClient);
   }
 }
