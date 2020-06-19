@@ -8,6 +8,7 @@ import { Holidays } from './apis/holidays';
 import { Reservations } from './apis/reservations';
 import { SLA } from './apis/SLA';
 import { PickupPoints } from './apis/pickup-points';
+import { Polygons } from './apis/polygons';
 
 export class Logistics {
   /**
@@ -55,6 +56,11 @@ export class Logistics {
    */
   readonly sla: SLA;
 
+  /**
+   * Polygons API
+   */
+  readonly polygons: Polygons;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.shippingPolicies = new ShippingPolicies(vtexHttpClient);
     this.carriers = new Carriers(vtexHttpClient);
@@ -65,5 +71,6 @@ export class Logistics {
     this.reservations = new Reservations(vtexHttpClient);
     this.sla = new SLA(vtexHttpClient);
     this.pickupPoints = new PickupPoints(vtexHttpClient);
+    this.polygons = new Polygons(vtexHttpClient);
   }
 }
