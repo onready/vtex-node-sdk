@@ -43,6 +43,7 @@ describe('VTEX tests', () => {
     expect(instance.masterData.scroll).not.toBe(null);
     expect(instance.masterData.schemas).not.toBe(null);
     expect(instance.masterData.indices).not.toBe(null);
+    expect(instance.masterData.clusters).not.toBe(null);
     done();
   }));
 
