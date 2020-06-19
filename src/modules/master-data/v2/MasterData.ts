@@ -3,6 +3,7 @@ import { Documents } from './apis/documents';
 import { Search } from './apis/search';
 import { Scroll } from './apis/scroll';
 import { Schemas } from './apis/schemas';
+import { Indices } from './apis/indices';
 
 export class MasterData {
   /**
@@ -25,10 +26,16 @@ export class MasterData {
    */
   readonly schemas: Schemas;
 
+  /**
+   * Indices API
+   */
+  readonly indices: Indices;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.documents = new Documents(vtexHttpClient);
     this.search = new Search(vtexHttpClient);
     this.scroll = new Scroll(vtexHttpClient);
     this.schemas = new Schemas(vtexHttpClient);
+    this.indices = new Indices(vtexHttpClient);
   }
 }

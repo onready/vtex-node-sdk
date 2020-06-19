@@ -2,14 +2,14 @@ import { AbstractApi } from '../../../../AbstractApi';
 import { VtexHttpResponse } from '../../../../../utils/VtexHttpResponse';
 
 export class Schemas extends AbstractApi {
-  private static readonly BASE_URL: string = '/api/dataentities';
+  private static readonly BASE_PATH: string = '/api/dataentities';
 
   /**
    * Return the schemas saved.
    * @param {string} dataEntityName
    */
   getSchemas(dataEntityName: string): Promise<VtexHttpResponse> {
-    const path = `${Schemas.BASE_URL}/${dataEntityName}/schemas`;
+    const path = `${Schemas.BASE_PATH}/${dataEntityName}/schemas`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 
@@ -19,7 +19,7 @@ export class Schemas extends AbstractApi {
    * @param {string} schemaName
    */
   getSchemaByName(dataEntityName: string, schemaName: string): Promise<VtexHttpResponse> {
-    const path = `${Schemas.BASE_URL}/${dataEntityName}/schemas/${schemaName}`;
+    const path = `${Schemas.BASE_PATH}/${dataEntityName}/schemas/${schemaName}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 
@@ -31,7 +31,7 @@ export class Schemas extends AbstractApi {
    */
   saveSchemaByName(dataEntityName: string, schemaName: string, schemaData: any)
     : Promise<VtexHttpResponse> {
-    const path = `${Schemas.BASE_URL}/${dataEntityName}/schemas/${schemaName}`;
+    const path = `${Schemas.BASE_PATH}/${dataEntityName}/schemas/${schemaName}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, schemaData);
   }
 }
