@@ -9,6 +9,7 @@ describe('VTEX tests', () => {
     const instance = new VTEX(store, appKey, appSecret);
 
     expect(instance).not.toBe(null);
+
     expect(instance.oms).not.toBe(null);
     expect(instance.oms.orders).not.toBe(null);
     expect(instance.oms.invoice).not.toBe(null);
@@ -18,6 +19,17 @@ describe('VTEX tests', () => {
     expect(instance.oms.orderHook).not.toBe(null);
     expect(instance.oms.exportOrderReport).not.toBe(null);
     expect(instance.oms.userOrders).not.toBe(null);
+
+    expect(instance.logistics.shippingPolicies).not.toBe(null);
+    expect(instance.logistics.carriers).not.toBe(null);
+    expect(instance.logistics.docks).not.toBe(null);
+    expect(instance.logistics.warehouses).not.toBe(null);
+    expect(instance.logistics.inventory).not.toBe(null);
+    expect(instance.logistics.holidays).not.toBe(null);
+    expect(instance.logistics.reservations).not.toBe(null);
+    expect(instance.logistics.sla).not.toBe(null);
+    expect(instance.logistics.pickupPoints).not.toBe(null);
+    expect(instance.logistics.polygons).not.toBe(null);
     done();
   }));
 
