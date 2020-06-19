@@ -40,6 +40,7 @@ describe('VTEX tests', () => {
     expect(instance.masterData).not.toBe(null);
     expect(instance.masterData.documents).not.toBe(null);
     expect(instance.masterData.search).not.toBe(null);
+    expect(instance.masterData.scroll).not.toBe(null);
     done();
   }));
 
