@@ -87,7 +87,8 @@ The final goal is to implement all VTEX Rest Apis. Feel free to contribute.
 API | Implemented
 :------------: | :-------------:|
 OMS | :white_check_mark: |
-Logistics | Comming soon... |
+Logistics | :white_check_mark: |
+Pricing  | Comming soon... |
 Antifraud Provider | :x: |
 Catalog | :x: |
 Checkout | :x: |
@@ -100,7 +101,6 @@ License Manager | :x: |
 Master Data (V2) | :x: |
 Payment Provider Protocol  | :x: |
 Payments Gateway  | :x: |
-Pricing  | :x: |
 Rates and Benefits  | :x: |
 Search  | :x: |
 Session Manager  | :x: |
