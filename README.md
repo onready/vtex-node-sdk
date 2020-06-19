@@ -88,7 +88,8 @@ API | Implemented
 :------------: | :-------------:|
 OMS | :white_check_mark: |
 Logistics | :white_check_mark: |
-Pricing  | Comming soon... |
+Pricing  | :white_check_mark: |
+Master Data (V2) | Comming soon... |
 Antifraud Provider | :x: |
 Catalog | :x: |
 Checkout | :x: |
@@ -98,7 +99,6 @@ Giftcard | :x: |
 Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
 License Manager | :x: |
-Master Data (V2) | :x: |
 Payment Provider Protocol  | :x: |
 Payments Gateway  | :x: |
 Rates and Benefits  | :x: |
