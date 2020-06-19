@@ -36,6 +36,9 @@ describe('VTEX tests', () => {
     expect(instance.pricing.priceTables).not.toBe(null);
     expect(instance.pricing.pricesAndFixedPrices).not.toBe(null);
     expect(instance.pricing.pricingConfig).not.toBe(null);
+
+    expect(instance.masterData).not.toBe(null);
+    expect(instance.masterData.documents).not.toBe(null);
     done();
   }));
 
