@@ -26,11 +26,17 @@ export class VtexHttpClient {
    * @param {string} path
    * @param {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} method
    * @param {any} body
+   * @param {any} additionalHeaders
    */
-  performRequest(path: string, method: string, body?: any): Promise<VtexHttpResponse> {
+  performRequest(path: string, method: string, body?: any, additionalHeaders?: any)
+    : Promise<VtexHttpResponse> {
+    const defaultRequestOptions = { ...this.defaultRequestOptions };
+    if (additionalHeaders) {
+      defaultRequestOptions.headers = { ...defaultRequestOptions.headers, ...additionalHeaders };
+    }
     return new Promise((resolve, reject) => {
       const requestOptions: https.RequestOptions = {
-        ...this.defaultRequestOptions,
+        ...defaultRequestOptions,
         path,
         method,
       };
