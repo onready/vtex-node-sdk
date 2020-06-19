@@ -5,6 +5,7 @@ import { Scroll } from './apis/scroll';
 import { Schemas } from './apis/schemas';
 import { Indices } from './apis/indices';
 import { Clusters } from './apis/clusters';
+import { Versions } from './apis/versions';
 
 export class MasterData {
   /**
@@ -37,6 +38,11 @@ export class MasterData {
    */
   readonly clusters: Clusters;
 
+  /**
+   * Versions API
+   */
+  readonly versions: Versions;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.documents = new Documents(vtexHttpClient);
     this.search = new Search(vtexHttpClient);
@@ -44,5 +50,6 @@ export class MasterData {
     this.schemas = new Schemas(vtexHttpClient);
     this.indices = new Indices(vtexHttpClient);
     this.clusters = new Clusters(vtexHttpClient);
+    this.versions = new Versions(vtexHttpClient);
   }
 }
