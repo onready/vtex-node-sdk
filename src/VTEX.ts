@@ -1,6 +1,7 @@
 import { VtexCredentials } from './VtexCredentials';
 import { VtexHttpClient } from './utils/VtexHttpClient';
 import { OMS } from './modules/OMS';
+import { Logistics } from './modules/logistics';
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -27,6 +28,11 @@ export class VTEX {
   readonly oms: OMS;
 
   /**
+   * Logistics Module
+   */
+  readonly logistics: Logistics;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -41,5 +47,6 @@ export class VTEX {
 
     // Create needed modules
     this.oms = new OMS(vtexHttpClient);
+    this.logistics = new Logistics(vtexHttpClient);
   }
 }
