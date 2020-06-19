@@ -9,7 +9,7 @@
 - :hammer: Built 100% with Typescript.
 - :muscle: 0 dependencies. It uses the native `https` Node module.
 - :tada: Promise based.
-- :dizzy: Type definitions for all VTEX requests and responses.
+- :dizzy: Type definitions for many VTEX requests and responses.
 
 <ins>**Note**</ins>: *<strong>This is not a VTEX official package, we are VTEX Partners since 2017 and we developed this to collaborate with VTEX Community.</strong>*
 
