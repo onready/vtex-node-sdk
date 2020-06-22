@@ -20,6 +20,7 @@ describe('VTEX tests', () => {
     expect(instance.oms.exportOrderReport).not.toBe(null);
     expect(instance.oms.userOrders).not.toBe(null);
 
+    expect(instance.logistics).not.toBe(null);
     expect(instance.logistics.shippingPolicies).not.toBe(null);
     expect(instance.logistics.carriers).not.toBe(null);
     expect(instance.logistics.docks).not.toBe(null);
@@ -30,6 +31,20 @@ describe('VTEX tests', () => {
     expect(instance.logistics.sla).not.toBe(null);
     expect(instance.logistics.pickupPoints).not.toBe(null);
     expect(instance.logistics.polygons).not.toBe(null);
+
+    expect(instance.pricing).not.toBe(null);
+    expect(instance.pricing.priceTables).not.toBe(null);
+    expect(instance.pricing.pricesAndFixedPrices).not.toBe(null);
+    expect(instance.pricing.pricingConfig).not.toBe(null);
+
+    expect(instance.masterData).not.toBe(null);
+    expect(instance.masterData.documents).not.toBe(null);
+    expect(instance.masterData.search).not.toBe(null);
+    expect(instance.masterData.scroll).not.toBe(null);
+    expect(instance.masterData.schemas).not.toBe(null);
+    expect(instance.masterData.indices).not.toBe(null);
+    expect(instance.masterData.clusters).not.toBe(null);
+    expect(instance.masterData.versions).not.toBe(null);
     done();
   }));
 

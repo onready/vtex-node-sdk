@@ -9,7 +9,7 @@
 - :hammer: Built 100% with Typescript.
 - :muscle: 0 dependencies. It uses the native `https` Node module.
 - :tada: Promise based.
-- :dizzy: Type definitions for all VTEX requests and responses.
+- :dizzy: Type definitions for many VTEX requests and responses.
 
 <ins>**Note**</ins>: *<strong>This is not a VTEX official package, we are VTEX Partners since 2017 and we developed this to collaborate with VTEX Community.</strong>*
 
@@ -88,9 +88,10 @@ API | Implemented
 :------------: | :-------------:|
 OMS | :white_check_mark: |
 Logistics | :white_check_mark: |
-Pricing  | Comming soon... |
+Pricing  | :white_check_mark: |
+Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Antifraud Provider | :x: |
-Catalog | :x: |
+Catalog | Comming soon... |
 Checkout | :x: |
 CMS | :x: |
 Customer Credit | :x: |
@@ -98,7 +99,6 @@ Giftcard | :x: |
 Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
 License Manager | :x: |
-Master Data (V2) | :x: |
 Payment Provider Protocol  | :x: |
 Payments Gateway  | :x: |
 Rates and Benefits  | :x: |

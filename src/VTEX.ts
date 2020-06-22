@@ -2,6 +2,8 @@ import { VtexCredentials } from './VtexCredentials';
 import { VtexHttpClient } from './utils/VtexHttpClient';
 import { OMS } from './modules/OMS';
 import { Logistics } from './modules/logistics';
+import { Pricing } from './modules/pricing';
+import { MasterData } from './modules/master-data/v2';
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -33,6 +35,16 @@ export class VTEX {
   readonly logistics: Logistics;
 
   /**
+   * Pricing Module
+   */
+  readonly pricing: Pricing;
+
+  /**
+   * Master Data (V2) Module
+   */
+  readonly masterData: MasterData;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -48,5 +60,7 @@ export class VTEX {
     // Create needed modules
     this.oms = new OMS(vtexHttpClient);
     this.logistics = new Logistics(vtexHttpClient);
+    this.pricing = new Pricing(vtexHttpClient);
+    this.masterData = new MasterData(vtexHttpClient);
   }
 }
