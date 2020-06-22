@@ -50,6 +50,27 @@ describe('VTEXHttpClient tests', () => {
     });
   }));
 
+  test('performRequest, with post method with body and additional headers, performs the request',
+    () => new Promise((done) => {
+      const path: string = '/api/oms/pvt/orders/orderId/changes';
+      const method: string = 'POST';
+      const requestBody: any = JSON.parse(readFileSync(getFilepath('vtexRequests/registerChangeOnOrder.json'), 'utf-8'));
+      const additionalHeaders = {
+        'Rest-Range': '0-100',
+      };
+      const scope: nock.Scope = nock(BASE_URL)
+        .post(path, requestBody)
+        .matchHeader('X-VTEX-API-AppKey', vtexCredentials.appKey)
+        .matchHeader('X-VTEX-API-AppToken', vtexCredentials.appToken)
+        .matchHeader('Rest-Range', '0-100')
+        .reply(200);
+
+      vtexHttpClient.performRequest(path, method, requestBody, additionalHeaders).then(() => {
+        expect(scope.isDone()).toBe(true);
+        done();
+      });
+    }));
+
   test('performRequest, with post method with body that returns 400, performs the request', () => new Promise((done) => {
     const path: string = '/api/oms/pvt/orders/orderId/changes';
     const method: string = 'POST';
