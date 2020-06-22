@@ -91,7 +91,7 @@ Logistics | :white_check_mark: |
 Pricing  | :white_check_mark: |
 Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Antifraud Provider | :x: |
-Catalog | :x: |
+Catalog | Comming soon... |
 Checkout | :x: |
 CMS | :x: |
 Customer Credit | :x: |
