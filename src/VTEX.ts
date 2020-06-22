@@ -4,6 +4,7 @@ import { OMS } from './modules/OMS';
 import { Logistics } from './modules/logistics';
 import { Pricing } from './modules/pricing';
 import { MasterData } from './modules/master-data/v2';
+import { Catalog } from './modules/catalog';
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -45,6 +46,11 @@ export class VTEX {
   readonly masterData: MasterData;
 
   /**
+   * Catalog Module
+   */
+  readonly catalog: Catalog;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -62,5 +68,6 @@ export class VTEX {
     this.logistics = new Logistics(vtexHttpClient);
     this.pricing = new Pricing(vtexHttpClient);
     this.masterData = new MasterData(vtexHttpClient);
+    this.catalog = new Catalog(vtexHttpClient);
   }
 }
