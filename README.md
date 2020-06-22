@@ -89,7 +89,7 @@ API | Implemented
 OMS | :white_check_mark: |
 Logistics | :white_check_mark: |
 Pricing  | :white_check_mark: |
-Master Data (V2) | Comming soon... |
+Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Antifraud Provider | :x: |
 Catalog | :x: |
 Checkout | :x: |
