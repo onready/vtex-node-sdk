@@ -13,7 +13,7 @@ export class Search extends AbstractApi {
     : Promise<VtexHttpResponse> {
     const headers = range ? { 'REST-Range': `resources=${range.from}-${range.to}` } : null;
     return this.vtexHttpClient.performRequest(
-      `/api/dataentities/${dataEntityName}/search?${params}`,
+      `/api/dataentities/${dataEntityName}/search?${params || ''}`,
       this.HTTP_METHODS.GET,
       null,
       headers,

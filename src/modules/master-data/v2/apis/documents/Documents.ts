@@ -14,7 +14,7 @@ export class Documents extends AbstractApi {
    */
   createNewDocument(dataEntityName: string, documentData: any, params?: string)
     : Promise<VtexHttpResponse<CreateNewDocumentResponse>> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, documentData);
   }
 
@@ -26,7 +26,7 @@ export class Documents extends AbstractApi {
    */
   createOrUpdateEntireDocument(dataEntityName: string, documentData: any, params?: string)
     : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, documentData);
   }
 
@@ -38,7 +38,7 @@ export class Documents extends AbstractApi {
    */
   createOrUpdatePartialDocument(dataEntityName: string, documentData: any, params?: string)
     : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PATCH, documentData);
   }
 
@@ -50,7 +50,7 @@ export class Documents extends AbstractApi {
    */
   getDocument(dataEntityName: string, id: string, params?: string)
     : Promise<VtexHttpResponse<GetDocumentResponse>> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 
@@ -63,7 +63,7 @@ export class Documents extends AbstractApi {
    */
   updateEntireDocument(dataEntityName: string, id: string, documentData: any, params?: string)
     : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, documentData);
   }
 
@@ -76,7 +76,7 @@ export class Documents extends AbstractApi {
    */
   updatePartialDocument(dataEntityName: string, id: string, documentData: any, params?: string)
     : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params || ''}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PATCH, documentData);
   }
 
