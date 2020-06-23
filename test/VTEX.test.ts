@@ -47,6 +47,8 @@ describe('VTEX tests', () => {
     expect(instance.masterData.versions).not.toBe(null);
 
     expect(instance.catalog).not.toBe(null);
+    expect(instance.catalog.skuService).not.toBe(null);
+    expect(instance.catalog.categoryAndBrand).not.toBe(null);
     done();
   }));
 
