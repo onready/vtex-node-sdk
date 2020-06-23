@@ -1,32 +1,45 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { CreateOrUpdateWarehouseRequest } from './requests/CreateOrUpdateWarehouseRequest';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { ListAllWarehousesResponseItem } from './responses/ListAllWarehousesResponseItem';
+import { AbstractApi } from "../../../AbstractApi";
+import { CreateOrUpdateWarehouseRequest } from "./requests/CreateOrUpdateWarehouseRequest";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { ListAllWarehousesResponseItem } from "./responses/ListAllWarehousesResponseItem";
 
 export class Warehouses extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/configuration/warehouses';
+  private static readonly BASE_PATH: string =
+    "/api/logistics/pvt/configuration/warehouses";
 
   /**
    * Creates or updates your store's warehouses
    * @param {CreateOrUpdateWarehouseRequest} warehouse
    */
-  createOrUpdateWarehouse(warehouse: CreateOrUpdateWarehouseRequest): Promise<VtexHttpResponse> {
-    return this.vtexHttpClient
-      .performRequest(Warehouses.BASE_PATH, this.HTTP_METHODS.POST, warehouse);
+  createOrUpdateWarehouse(
+    warehouse: CreateOrUpdateWarehouseRequest
+  ): Promise<VtexHttpResponse> {
+    return this.vtexHttpClient.performRequest(
+      Warehouses.BASE_PATH,
+      this.HTTP_METHODS.POST,
+      warehouse
+    );
   }
 
   /**
    * Lists information about all warehouses set up in your store.
    */
-  listAllWarehouses(): Promise<VtexHttpResponse<Array<ListAllWarehousesResponseItem>>> {
-    return this.vtexHttpClient.performRequest(Warehouses.BASE_PATH, this.HTTP_METHODS.GET);
+  listAllWarehouses(): Promise<
+    VtexHttpResponse<Array<ListAllWarehousesResponseItem>>
+  > {
+    return this.vtexHttpClient.performRequest(
+      Warehouses.BASE_PATH,
+      this.HTTP_METHODS.GET
+    );
   }
 
   /**
    * Lists the information of a given warehouse, searching by warehouse ID.
    * @param {string} warehouseId
    */
-  listWarehouseById(warehouseId: string): Promise<VtexHttpResponse<ListAllWarehousesResponseItem>> {
+  listWarehouseById(
+    warehouseId: string
+  ): Promise<VtexHttpResponse<ListAllWarehousesResponseItem>> {
     const path = `${Warehouses.BASE_PATH}/${warehouseId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }

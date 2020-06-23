@@ -1,13 +1,13 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { GetCategoryTreeResponseItem } from './responses/GetCategoryTreeResponseItem';
-import { GetCategoryByIdResponse } from './responses/GetCategoryByIdResponse';
-import { UpdateCategoryRequest } from './requests/UpdateCategoryRequest';
-import { GetBrandResponse } from './responses/GetBrandResponse';
-import { UpdateBrandRequest } from './requests/UpdateBrandRequest';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { GetCategoryTreeResponseItem } from "./responses/GetCategoryTreeResponseItem";
+import { GetCategoryByIdResponse } from "./responses/GetCategoryByIdResponse";
+import { UpdateCategoryRequest } from "./requests/UpdateCategoryRequest";
+import { GetBrandResponse } from "./responses/GetBrandResponse";
+import { UpdateBrandRequest } from "./requests/UpdateBrandRequest";
 
 export class CategoryAndBrand extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/catalog';
+  private static readonly BASE_PATH: string = "/api/catalog";
 
   /**
    * Retrieves the Category Tree of your store.
@@ -15,9 +15,12 @@ export class CategoryAndBrand extends AbstractApi {
    * up to which you want to get.
    * @param {number} categoryLevels
    */
-  getCategoryTree(categoryLevels?: number)
-    : Promise<VtexHttpResponse<Array<GetCategoryTreeResponseItem>>> {
-    const path = `${CategoryAndBrand.BASE_PATH}_system/pub/category/tree/${categoryLevels || ''}`;
+  getCategoryTree(
+    categoryLevels?: number
+  ): Promise<VtexHttpResponse<Array<GetCategoryTreeResponseItem>>> {
+    const path = `${CategoryAndBrand.BASE_PATH}_system/pub/category/tree/${
+      categoryLevels || ""
+    }`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 
@@ -25,7 +28,9 @@ export class CategoryAndBrand extends AbstractApi {
    * Retrieves general information about a Category
    * @param {number} categoryId
    */
-  getCategoryById(categoryId: number): Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
+  getCategoryById(
+    categoryId: number
+  ): Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
     const path = `${CategoryAndBrand.BASE_PATH}/pvt/category/${categoryId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -35,20 +40,31 @@ export class CategoryAndBrand extends AbstractApi {
    * @param {number} categoryId
    * @param {UpdateCategoryRequest} data
    */
-  updateCategory(categoryId: number, data: UpdateCategoryRequest)
-    : Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
+  updateCategory(
+    categoryId: number,
+    data: UpdateCategoryRequest
+  ): Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
     const path = `${CategoryAndBrand.BASE_PATH}/pvt/category/${categoryId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      data
+    );
   }
 
   /**
    * Creates a new Category from scratch
    * @param {UpdateCategoryRequest} data
    */
-  createCategory(data: UpdateCategoryRequest)
-    : Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
+  createCategory(
+    data: UpdateCategoryRequest
+  ): Promise<VtexHttpResponse<GetCategoryByIdResponse>> {
     const path = `${CategoryAndBrand.BASE_PATH}/pvt/category`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 
   /**
@@ -73,10 +89,16 @@ export class CategoryAndBrand extends AbstractApi {
    * @param {string} brandId
    * @param {UpdateBrandRequest} brandData
    */
-  updateBrand(brandId: string, brandData: UpdateBrandRequest)
-    : Promise<VtexHttpResponse<UpdateBrandRequest>> {
+  updateBrand(
+    brandId: string,
+    brandData: UpdateBrandRequest
+  ): Promise<VtexHttpResponse<UpdateBrandRequest>> {
     const path = `${CategoryAndBrand.BASE_PATH}/pvt/brand/${brandId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, brandData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      brandData
+    );
   }
 
   /**
@@ -92,8 +114,14 @@ export class CategoryAndBrand extends AbstractApi {
    * Creates a new Brand from scratch
    * @param {UpdateBrandRequest} brandData
    */
-  createBrand(brandData: UpdateBrandRequest): Promise<VtexHttpResponse<UpdateBrandRequest>> {
+  createBrand(
+    brandData: UpdateBrandRequest
+  ): Promise<VtexHttpResponse<UpdateBrandRequest>> {
     const path = `${CategoryAndBrand.BASE_PATH}/pvt/brand`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, brandData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      brandData
+    );
   }
 }

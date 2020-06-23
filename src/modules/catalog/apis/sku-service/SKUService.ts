@@ -1,28 +1,34 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { UpdateSKUServiceRequest } from './requests/UpdateSKUServiceRequest';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { UpdateSKUServiceResponse } from './responses/UpdateSKUServiceResponse';
-import { AssociateSKUServiceRequest } from './requests/AssociateSKUServiceRequest';
-import { AssociateSKUServiceResponse } from './responses/AssociateSKUServiceResponse';
-import { AssociateSKUServiceAttachmentRequest } from './requests/AssociateSKUServiceAttachmentRequest';
-import { AssociateSKUServiceAttachmentResponse } from './responses/AssociateSKUServiceAttachmentResponse';
-import { UpdateSKUServiceValueRequest } from './requests/UpdateSKUServiceValueRequest';
-import { UpdateSKUServiceValueResponse } from './responses/UpdateSKUServiceValueResponse';
-import { UpdateSKUServiceTypeRequest } from './requests/UpdateSKUServiceTypeRequest';
-import { UpdateSKUServiceTypeResponse } from './responses/UpdateSKUServiceTypeResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { UpdateSKUServiceRequest } from "./requests/UpdateSKUServiceRequest";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { UpdateSKUServiceResponse } from "./responses/UpdateSKUServiceResponse";
+import { AssociateSKUServiceRequest } from "./requests/AssociateSKUServiceRequest";
+import { AssociateSKUServiceResponse } from "./responses/AssociateSKUServiceResponse";
+import { AssociateSKUServiceAttachmentRequest } from "./requests/AssociateSKUServiceAttachmentRequest";
+import { AssociateSKUServiceAttachmentResponse } from "./responses/AssociateSKUServiceAttachmentResponse";
+import { UpdateSKUServiceValueRequest } from "./requests/UpdateSKUServiceValueRequest";
+import { UpdateSKUServiceValueResponse } from "./responses/UpdateSKUServiceValueResponse";
+import { UpdateSKUServiceTypeRequest } from "./requests/UpdateSKUServiceTypeRequest";
+import { UpdateSKUServiceTypeResponse } from "./responses/UpdateSKUServiceTypeResponse";
 
 export class SKUService extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/catalog/pvt/skuservice';
+  private static readonly BASE_PATH: string = "/api/catalog/pvt/skuservice";
 
   /**
    * Updates an SKU Service from an SKU
    * @param {number} skuServiceId
    * @param {UpdateSKUServiceRequest} data
    */
-  updateSKUService(skuServiceId: number, data: UpdateSKUServiceRequest)
-    : Promise<VtexHttpResponse<UpdateSKUServiceResponse>> {
+  updateSKUService(
+    skuServiceId: number,
+    data: UpdateSKUServiceRequest
+  ): Promise<VtexHttpResponse<UpdateSKUServiceResponse>> {
     const path = `${SKUService.BASE_PATH}/${skuServiceId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 
   /**
@@ -38,17 +44,23 @@ export class SKUService extends AbstractApi {
    * Associates an SKU Service to an SKU
    * @param {AssociateSKUServiceRequest} data
    */
-  associateSKUService(data: AssociateSKUServiceRequest)
-    : Promise<VtexHttpResponse<AssociateSKUServiceResponse>> {
-    return this.vtexHttpClient.performRequest(SKUService.BASE_PATH, this.HTTP_METHODS.POST, data);
+  associateSKUService(
+    data: AssociateSKUServiceRequest
+  ): Promise<VtexHttpResponse<AssociateSKUServiceResponse>> {
+    return this.vtexHttpClient.performRequest(
+      SKUService.BASE_PATH,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 
   /**
    * typeattachment/skuServiceTypeAttachmentId
    * @param {number} skuServiceTypeAttachmentId
    */
-  dissociateAttachmentFromSKUServiceType(skuServiceTypeAttachmentId: number)
-    : Promise<VtexHttpResponse> {
+  dissociateAttachmentFromSKUServiceType(
+    skuServiceTypeAttachmentId: number
+  ): Promise<VtexHttpResponse> {
     const path = `${SKUService.BASE_PATH}typeattachment/${skuServiceTypeAttachmentId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
   }
@@ -57,10 +69,15 @@ export class SKUService extends AbstractApi {
    * Associates an Attachment for an existing SKU Service Type
    * @param {AssociateSKUServiceAttachmentRequest} data
    */
-  associateSKUServiceAttachment(data: AssociateSKUServiceAttachmentRequest)
-    : Promise<VtexHttpResponse<AssociateSKUServiceAttachmentResponse>> {
+  associateSKUServiceAttachment(
+    data: AssociateSKUServiceAttachmentRequest
+  ): Promise<VtexHttpResponse<AssociateSKUServiceAttachmentResponse>> {
     const path = `${SKUService.BASE_PATH}typeattachment`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 
   /**
@@ -68,14 +85,16 @@ export class SKUService extends AbstractApi {
    * @param {number} attachmentId
    * @param {number} skuServiceTypeId
    */
-  dissociateAttachmentByAttachmentIDorSKUServiceTypeID(attachmentId?: number,
-    skuServiceTypeId?: number): Promise<VtexHttpResponse> {
-    let params = '?';
+  dissociateAttachmentByAttachmentIDorSKUServiceTypeID(
+    attachmentId?: number,
+    skuServiceTypeId?: number
+  ): Promise<VtexHttpResponse> {
+    let params = "?";
     if (attachmentId) {
       params += `attachmentId=${attachmentId}`;
     }
     if (attachmentId && skuServiceTypeId) {
-      params += '&';
+      params += "&";
     }
     if (skuServiceTypeId) {
       params += `skuServiceTypeId=${skuServiceTypeId}`;
@@ -89,10 +108,16 @@ export class SKUService extends AbstractApi {
    * @param {number} skuServiceValueId
    * @param {UpdateSKUServiceValueRequest} data
    */
-  updateSKUServiceValue(skuServiceValueId: number, data: UpdateSKUServiceValueRequest)
-    : Promise<VtexHttpResponse<UpdateSKUServiceValueResponse>> {
+  updateSKUServiceValue(
+    skuServiceValueId: number,
+    data: UpdateSKUServiceValueRequest
+  ): Promise<VtexHttpResponse<UpdateSKUServiceValueResponse>> {
     const path = `${SKUService.BASE_PATH}value/${skuServiceValueId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      data
+    );
   }
 
   /**
@@ -108,10 +133,15 @@ export class SKUService extends AbstractApi {
    * Creates an SKU Service Value for an existing SKU Service Type
    * @param {UpdateSKUServiceValueRequest} data
    */
-  createSKUServiceValue(data: UpdateSKUServiceValueRequest)
-    : Promise<VtexHttpResponse<UpdateSKUServiceValueResponse>> {
+  createSKUServiceValue(
+    data: UpdateSKUServiceValueRequest
+  ): Promise<VtexHttpResponse<UpdateSKUServiceValueResponse>> {
     const path = `${SKUService.BASE_PATH}value`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 
   /**
@@ -119,10 +149,16 @@ export class SKUService extends AbstractApi {
    * @param {number} skuServiceTypeId
    * @param {UpdateSKUServiceTypeRequest} data
    */
-  updateSKUServiceType(skuServiceTypeId: number, data: UpdateSKUServiceTypeRequest)
-    : Promise<VtexHttpResponse<UpdateSKUServiceTypeResponse>> {
+  updateSKUServiceType(
+    skuServiceTypeId: number,
+    data: UpdateSKUServiceTypeRequest
+  ): Promise<VtexHttpResponse<UpdateSKUServiceTypeResponse>> {
     const path = `${SKUService.BASE_PATH}type/${skuServiceTypeId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      data
+    );
   }
 
   /**
@@ -138,9 +174,14 @@ export class SKUService extends AbstractApi {
    * Creates an SKU Service Type from scratch
    * @param {UpdateSKUServiceTypeRequest} data
    */
-  createSKUServiceType(data: UpdateSKUServiceTypeRequest)
-    : Promise<VtexHttpResponse<UpdateSKUServiceTypeResponse>> {
+  createSKUServiceType(
+    data: UpdateSKUServiceTypeRequest
+  ): Promise<VtexHttpResponse<UpdateSKUServiceTypeResponse>> {
     const path = `${SKUService.BASE_PATH}type`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, data);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      data
+    );
   }
 }

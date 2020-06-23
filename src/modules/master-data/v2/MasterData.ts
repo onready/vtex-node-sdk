@@ -1,11 +1,11 @@
-import { VtexHttpClient } from '../../../utils/VtexHttpClient';
-import { Documents } from './apis/documents';
-import { Search } from './apis/search';
-import { Scroll } from './apis/scroll';
-import { Schemas } from './apis/schemas';
-import { Indices } from './apis/indices';
-import { Clusters } from './apis/clusters';
-import { Versions } from './apis/versions';
+import { VtexHttpClient } from "../../../utils/VtexHttpClient";
+import { Documents } from "./apis/documents";
+import { Search } from "./apis/search";
+import { Scroll } from "./apis/scroll";
+import { Schemas } from "./apis/schemas";
+import { Indices } from "./apis/indices";
+import { Clusters } from "./apis/clusters";
+import { Versions } from "./apis/versions";
 
 export class MasterData {
   /**

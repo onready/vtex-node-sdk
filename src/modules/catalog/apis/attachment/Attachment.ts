@@ -1,16 +1,18 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { GetAttachmentResponse } from './responses/GetAttachmentResponse';
-import { UpdateAttachmentRequest } from './requests/UpdateAttachmentRequest';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { GetAttachmentResponse } from "./responses/GetAttachmentResponse";
+import { UpdateAttachmentRequest } from "./requests/UpdateAttachmentRequest";
 
 export class Attachment extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/catalog/pvt/attachment';
+  private static readonly BASE_PATH: string = "/api/catalog/pvt/attachment";
 
   /**
    * Gets information about a registered attachment
    * @param {string} attachmentId
    */
-  getAttachment(attachmentId: string): Promise<VtexHttpResponse<GetAttachmentResponse>> {
+  getAttachment(
+    attachmentId: string
+  ): Promise<VtexHttpResponse<GetAttachmentResponse>> {
     const path = `${Attachment.BASE_PATH}/${attachmentId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -20,10 +22,16 @@ export class Attachment extends AbstractApi {
    * @param {string} attachmentId
    * @param {UpdateAttachmentRequest} attachmentData
    */
-  updateAttachment(attachmentId: string, attachmentData: UpdateAttachmentRequest)
-    : Promise<VtexHttpResponse<GetAttachmentResponse>> {
+  updateAttachment(
+    attachmentId: string,
+    attachmentData: UpdateAttachmentRequest
+  ): Promise<VtexHttpResponse<GetAttachmentResponse>> {
     const path = `${Attachment.BASE_PATH}/${attachmentId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, attachmentData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      attachmentData
+    );
   }
 
   /**
@@ -39,9 +47,13 @@ export class Attachment extends AbstractApi {
    * Creates a new SKU attachment from scratch
    * @param {UpdateAttachmentRequest} attachmentData
    */
-  createAttachment(attachmentData: UpdateAttachmentRequest)
-    : Promise<VtexHttpResponse<GetAttachmentResponse>> {
-    return this.vtexHttpClient
-      .performRequest(Attachment.BASE_PATH, this.HTTP_METHODS.POST, attachmentData);
+  createAttachment(
+    attachmentData: UpdateAttachmentRequest
+  ): Promise<VtexHttpResponse<GetAttachmentResponse>> {
+    return this.vtexHttpClient.performRequest(
+      Attachment.BASE_PATH,
+      this.HTTP_METHODS.POST,
+      attachmentData
+    );
   }
 }

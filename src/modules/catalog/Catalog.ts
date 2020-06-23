@@ -1,7 +1,7 @@
-import { VtexHttpClient } from '../../utils/VtexHttpClient';
-import { SKUService } from './apis/sku-service/SKUService';
-import { CategoryAndBrand } from './apis/category-and-brand';
-import { Attachment } from './apis/attachment';
+import { VtexHttpClient } from "../../utils/VtexHttpClient";
+import { SKUService } from "./apis/sku-service/SKUService";
+import { CategoryAndBrand } from "./apis/category-and-brand";
+import { Attachment } from "./apis/attachment";
 
 export class Catalog {
   /**

@@ -1,4 +1,4 @@
-import { AbstractApi } from '../../../../AbstractApi';
+import { AbstractApi } from "../../../../AbstractApi";
 
 export class Scroll extends AbstractApi {
   /**
@@ -8,7 +8,8 @@ export class Scroll extends AbstractApi {
    */
   scrollDocuments(dataEntityName: string, params?: string) {
     return this.vtexHttpClient.performRequest(
-      `/api/dataentities/${dataEntityName}/scroll?${params || ''}`, this.HTTP_METHODS.GET,
+      `/api/dataentities/${dataEntityName}/scroll?${params || ""}`,
+      this.HTTP_METHODS.GET
     );
   }
 }

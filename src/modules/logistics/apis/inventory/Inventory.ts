@@ -1,17 +1,19 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { ListInventoryBySkuResponse } from './responses/ListInventoryBySkuResponse';
-import { ListInventoryWithDispatchedReservationsResponse } from './responses/ListInventoryWithDispatchedReservationsResponse';
-import { UpdateInventoryBySkuAndWarehouseRequest } from './requests/UpdateInventoryBySkuAndWarehouseRequest';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { ListInventoryBySkuResponse } from "./responses/ListInventoryBySkuResponse";
+import { ListInventoryWithDispatchedReservationsResponse } from "./responses/ListInventoryWithDispatchedReservationsResponse";
+import { UpdateInventoryBySkuAndWarehouseRequest } from "./requests/UpdateInventoryBySkuAndWarehouseRequest";
 
 export class Inventory extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/inventory';
+  private static readonly BASE_PATH: string = "/api/logistics/pvt/inventory";
 
   /**
    * Lists your store's inventory by SKU ID
    * @param {string} skuId
    */
-  listInventoryBySku(skuId: string): Promise<VtexHttpResponse<ListInventoryBySkuResponse>> {
+  listInventoryBySku(
+    skuId: string
+  ): Promise<VtexHttpResponse<ListInventoryBySkuResponse>> {
     const path = `${Inventory.BASE_PATH}/skus/${skuId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -21,7 +23,10 @@ export class Inventory extends AbstractApi {
    * @param {string} skuId
    * @param {string} warehouseId
    */
-  listInventoryPerWarehouse(skuId: string, warehouseId: string): Promise<VtexHttpResponse> {
+  listInventoryPerWarehouse(
+    skuId: string,
+    warehouseId: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Inventory.BASE_PATH}/items/${skuId}/warehouses/${warehouseId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -31,7 +36,10 @@ export class Inventory extends AbstractApi {
    * @param {string} skuId
    * @param {string} dockId
    */
-  listInventoryPerDock(skuId: string, dockId: string): Promise<VtexHttpResponse> {
+  listInventoryPerDock(
+    skuId: string,
+    dockId: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Inventory.BASE_PATH}/items/${skuId}/docks/${dockId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -42,8 +50,11 @@ export class Inventory extends AbstractApi {
    * @param {string} dockId
    * @param {string} warehouseId
    */
-  listInventoryPerDockAndWarehouse(skuId: string, dockId: string, warehouseId: string)
-    : Promise<VtexHttpResponse> {
+  listInventoryPerDockAndWarehouse(
+    skuId: string,
+    dockId: string,
+    warehouseId: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Inventory.BASE_PATH}/items/${skuId}/docks/${dockId}/warehouses/${warehouseId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -56,8 +67,12 @@ export class Inventory extends AbstractApi {
    * @param {string} itemId
    * @param {string} warehouseId
    */
-  listInventoryWithDispatchedReservations(itemId: string, warehouseId: string)
-    : Promise<VtexHttpResponse<ListInventoryWithDispatchedReservationsResponse>> {
+  listInventoryWithDispatchedReservations(
+    itemId: string,
+    warehouseId: string
+  ): Promise<
+    VtexHttpResponse<ListInventoryWithDispatchedReservationsResponse>
+  > {
     const path = `${Inventory.BASE_PATH}/items/${itemId}/warehouses/${warehouseId}/dispatched`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -68,9 +83,16 @@ export class Inventory extends AbstractApi {
    * @param {string} warehouseId
    * @param {UpdateInventoryBySkuAndWarehouseRequest} inventoryData
    */
-  updateInventoryBySkuAndWarehouse(skuId: string, warehouseId: string,
-    inventoryData: UpdateInventoryBySkuAndWarehouseRequest): Promise<VtexHttpResponse> {
+  updateInventoryBySkuAndWarehouse(
+    skuId: string,
+    warehouseId: string,
+    inventoryData: UpdateInventoryBySkuAndWarehouseRequest
+  ): Promise<VtexHttpResponse> {
     const path = `${Inventory.BASE_PATH}/skus/${skuId}/warehouses/${warehouseId}/dispatched`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, inventoryData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      inventoryData
+    );
   }
 }

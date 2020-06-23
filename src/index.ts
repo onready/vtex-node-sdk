@@ -1,1 +1,1 @@
-export * from './VTEX';
+export * from "./VTEX";
