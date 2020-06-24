@@ -8,6 +8,14 @@ import { GetSKUListByProductIdResponseItem } from "./responses/GetSKUListByProdu
 import { GetSKUFileResponseItem } from "./responses/GetSKUFileResponseItem";
 import { CreateSKUFileRequest } from "./requests/CreateSKUFileRequest";
 import { GetSKUKitResponse } from "./responses/GetSKUKitResponse";
+import { CreateSKUKitRequest } from "./requests/CreateSKUKitRequest";
+import { GetSKUSpecificationsResponseItem } from "./responses/GetSKUSpecificationsResponseItem";
+import { CreateSKUSpecificationRequest } from "./requests/CreateSKUSpecificationRequest";
+import { UpdateSKURequest } from "./requests/UpdateSKURequest";
+import { AssociateSKUAttachmentRequest } from "./requests/AssociateSKUAttachmentRequest";
+import { AssociateSKUAttachmentResponse } from "./responses/AssociateSKUAttachmentResponse";
+import { CreateSKUComplementRequest } from "./requests/CreateSKUComplementRequest";
+import { CreateSKUComplementResponse } from "./responses/CreateSKUComplementResponse";
 
 export class SKU extends AbstractApi {
   private static readonly BASE_PATH: string = "/api/catalog";
@@ -176,5 +184,195 @@ export class SKU extends AbstractApi {
     }
     const path = `${SKU.BASE_PATH}/pvt/stockkeepingunitkit${params}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+  }
+
+  /**
+   * Creates new component to a specific Kit
+   * @param {CreateSKUKitRequest} skuKitData
+   */
+  createSKUKit(
+    skuKitData: CreateSKUKitRequest
+  ): Promise<VtexHttpResponse<GetSKUKitResponse>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunitkit`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      skuKitData
+    );
+  }
+
+  /**
+   * Deletes all Kit’s components based on the Parent SKU ID or deletes
+   * a specific Kit’s component based on the SKU ID
+   * @param {string} skuId
+   * @param {string} parentSkuId
+   */
+  deleteSKUKitBySkuIDOrParentSkuId(
+    skuId?: string,
+    parentSkuId?: string
+  ): Promise<VtexHttpResponse> {
+    let params = "?";
+    if (skuId) {
+      params += `skuId=${skuId}`;
+    }
+    if (skuId && parentSkuId) {
+      params += "&";
+    }
+    if (parentSkuId) {
+      params += `parentSkuId=${parentSkuId}`;
+    }
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunitkit${params}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Retrieves general information about an SKU Specification
+   * @param {string} skuId
+   */
+  getSKUSpecifications(
+    skuId: string
+  ): Promise<VtexHttpResponse<Array<GetSKUSpecificationsResponseItem>>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/specification`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+  }
+
+  /**
+   * Creates a new Specification on a previously existing SKU
+   * @param {string} skuId
+   * @param {CreateSKUSpecificationRequest} skuSpecificationData
+   */
+  createSKUSpecification(
+    skuId: string,
+    skuSpecificationData: CreateSKUSpecificationRequest
+  ): Promise<VtexHttpResponse<GetSKUSpecificationsResponseItem>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/specification`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      skuSpecificationData
+    );
+  }
+
+  /**
+   * Deletes all Product Specifications
+   * @param {string} skuId
+   */
+  deleteAllSKUSpecifications(skuId: string): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/specification`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Receives a list of Reference IDs and returns the same list with the corresponding SKU IDs.
+   * @param {Array<number>} refIdList
+   */
+  retrieveSkuIdListByRefIdList(
+    refIdList: Array<number>
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}_system/pub/sku/stockkeepingunitidsbyrefids`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      refIdList
+    );
+  }
+
+  /**
+   * Updates an existing SKU
+   * @param {string} skuId
+   * @param {UpdateSKURequest} skuData
+   */
+  updateSKU(
+    skuId: string,
+    skuData: UpdateSKURequest
+  ): Promise<VtexHttpResponse<GetSKUByRefIdResponse>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      skuData
+    );
+  }
+
+  /**
+   * Associates an existing SKU to an existing Attachment
+   * @param {AssociateSKUAttachmentRequest} skuAttachmentData
+   */
+  associateSKUAttachment(
+    skuAttachmentData: AssociateSKUAttachmentRequest
+  ): Promise<VtexHttpResponse<AssociateSKUAttachmentResponse>> {
+    const path = `${SKU.BASE_PATH}/pvt/skuattachment`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      skuAttachmentData
+    );
+  }
+
+  /**
+   * Deletes an association of an SKU to an Attachment by its Sku ID
+   * @param {string} skuId
+   */
+  deleteSKUAttachmentBySkuId(skuId: string): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/skuattachment?skuId=${skuId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Updates a new Image on an SKU based on its URL
+   * @param {string} skuId
+   * @param {string} skuFileId
+   * @param {CreateSKUFileRequest} skuFileData
+   */
+  updateSKUFile(
+    skuId: string,
+    skuFileId: string,
+    skuFileData: CreateSKUFileRequest
+  ): Promise<VtexHttpResponse<GetSKUFileResponseItem>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/file/${skuFileId}`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      skuFileData
+    );
+  }
+
+  /**
+   * Deletes a specific SKU Image File
+   * @param {string} skuId
+   * @param {string} skuFileId
+   */
+  deleteSKUImageByFileId(
+    skuId: string,
+    skuFileId: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/file/${skuFileId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Creates a new SKU Complement on a Parent SKU
+   * @param {CreateSKUComplementRequest} skuComplementData
+   */
+  createSKUComplement(
+    skuComplementData: CreateSKUComplementRequest
+  ): Promise<VtexHttpResponse<CreateSKUComplementResponse>> {
+    const path = `${SKU.BASE_PATH}/pvt/skucomplement`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      skuComplementData
+    );
+  }
+
+  /**
+   * Deletes an association of an SKU to an Attachment by its Attachment ID
+   * @param {string} attachmentId
+   */
+  deleteSKUAttachmentByAttachmentId(
+    attachmentId: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/skuattachment/${attachmentId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
   }
 }
