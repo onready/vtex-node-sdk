@@ -3,6 +3,7 @@ import { SKUService } from "./apis/sku-service/SKUService";
 import { CategoryAndBrand } from "./apis/category-and-brand";
 import { Attachment } from "./apis/attachment";
 import { Product } from "./apis/product";
+import { TradePolicy } from "./apis/trade-policy";
 
 export class Catalog {
   /**
@@ -25,10 +26,16 @@ export class Catalog {
    */
   readonly product: Product;
 
+  /**
+   * Trade Policy API
+   */
+  readonly tradePolicy: TradePolicy;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
     this.attachment = new Attachment(vtexHttpClient);
     this.product = new Product(vtexHttpClient);
+    this.tradePolicy = new TradePolicy(vtexHttpClient);
   }
 }
