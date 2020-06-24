@@ -8,6 +8,6 @@ export interface OrderChangeRequest {
   reason?: string;
   discountValue?: number;
   incrementValue?: number;
-  itemsRemoved?: Array<OrderChangeItem>
-  itemsAdded?: Array<OrderChangeItem>
+  itemsRemoved?: Array<OrderChangeItem>;
+  itemsAdded?: Array<OrderChangeItem>;
 }

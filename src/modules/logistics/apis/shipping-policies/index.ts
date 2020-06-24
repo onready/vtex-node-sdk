@@ -1,1 +1,1 @@
-export * from './ShippingPolicies';
+export * from "./ShippingPolicies";

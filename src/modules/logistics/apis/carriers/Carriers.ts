@@ -1,26 +1,35 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { CreateOrUpdateCarrierRequest } from './requests/CreateOrUpdateCarrierRequest';
-import { ListAllCarriersResponseItem } from './responses/ListAllCarriersResponse';
-import { CreateOrUpdateFreightValuesRequestItem } from './requests/CreateOrUpdateFreightValuesRequestItem';
-import { ListFreightValuesResponseItem } from './responses/ListFreightValuesResponseItem';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { CreateOrUpdateCarrierRequest } from "./requests/CreateOrUpdateCarrierRequest";
+import { ListAllCarriersResponseItem } from "./responses/ListAllCarriersResponse";
+import { CreateOrUpdateFreightValuesRequestItem } from "./requests/CreateOrUpdateFreightValuesRequestItem";
+import { ListFreightValuesResponseItem } from "./responses/ListFreightValuesResponseItem";
 
 export class Carriers extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/configuration';
+  private static readonly BASE_PATH: string =
+    "/api/logistics/pvt/configuration";
 
   /**
    * Creates or updates carriers in your store
    * @param {CreateOrUpdateCarrierRequest} carrierData
    */
-  createOrUpdateCarrier(carrierData: CreateOrUpdateCarrierRequest): Promise<VtexHttpResponse> {
+  createOrUpdateCarrier(
+    carrierData: CreateOrUpdateCarrierRequest
+  ): Promise<VtexHttpResponse> {
     const path = `${Carriers.BASE_PATH}/carriers`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, carrierData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      carrierData
+    );
   }
 
   /**
    * Get information about all carriers in your store.
    */
-  listAllCarriers(): Promise<VtexHttpResponse<Array<ListAllCarriersResponseItem>>> {
+  listAllCarriers(): Promise<
+    VtexHttpResponse<Array<ListAllCarriersResponseItem>>
+  > {
     const path = `${Carriers.BASE_PATH}/carriers`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -29,7 +38,9 @@ export class Carriers extends AbstractApi {
    * Lists information about your store's carriers by searching through the Carrier's ID.
    * @param {string} carrierId
    */
-  listCarrierByid(carrierId: string): Promise<VtexHttpResponse<ListAllCarriersResponseItem>> {
+  listCarrierByid(
+    carrierId: string
+  ): Promise<VtexHttpResponse<ListAllCarriersResponseItem>> {
     const path = `${Carriers.BASE_PATH}/carriers/${carrierId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -48,10 +59,16 @@ export class Carriers extends AbstractApi {
    * @param {string} carrierId
    * @param {Array<CreateOrUpdateFreightValuesRequestItem>} freightValues
    */
-  createOrUpdateFreightValues(carrierId: string,
-    freightValues: Array<CreateOrUpdateFreightValuesRequestItem>): Promise<VtexHttpResponse> {
+  createOrUpdateFreightValues(
+    carrierId: string,
+    freightValues: Array<CreateOrUpdateFreightValuesRequestItem>
+  ): Promise<VtexHttpResponse> {
     const path = `${Carriers.BASE_PATH}/freights/${carrierId}/values/update`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, freightValues);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      freightValues
+    );
   }
 
   /**
@@ -59,8 +76,10 @@ export class Carriers extends AbstractApi {
    * @param {string} carrierId
    * @param {string} cep
    */
-  listFreightValues(carrierId: string, cep: string)
-    : Promise<VtexHttpResponse<Array<ListFreightValuesResponseItem>>> {
+  listFreightValues(
+    carrierId: string,
+    cep: string
+  ): Promise<VtexHttpResponse<Array<ListFreightValuesResponseItem>>> {
     const path = `${Carriers.BASE_PATH}/freights/${carrierId}/${cep}/values`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -79,10 +98,17 @@ export class Carriers extends AbstractApi {
    * @param {string} carrierId
    * @param {string} deliveryWindow
    */
-  addBlockedDeliveryWindows(carrierId: string, deliveryWindow: string): Promise<VtexHttpResponse> {
+  addBlockedDeliveryWindows(
+    carrierId: string,
+    deliveryWindow: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Carriers.BASE_PATH}/carriers/${carrierId}/adddayofweekblocked`;
     const body = `"${deliveryWindow}"`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, body);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      body
+    );
   }
 
   /**
@@ -90,11 +116,17 @@ export class Carriers extends AbstractApi {
    * @param {string} carrierId
    * @param {string} deliveryWindow
    */
-  removeBlockedDeliveryWindows(carrierId: string, deliveryWindow: string)
-    : Promise<VtexHttpResponse> {
+  removeBlockedDeliveryWindows(
+    carrierId: string,
+    deliveryWindow: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Carriers.BASE_PATH}/carriers/${carrierId}/removedayofweekblocked`;
     const body = `"${deliveryWindow}"`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, body);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      body
+    );
   }
 
   /**

@@ -1,10 +1,11 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { CreateShippingPolicyRequest } from './requests/CreateShippingPolicyRequest';
-import { UpdateShippingPolicyRequest } from './requests/UpdateShippingPolicyRequest';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { CreateShippingPolicyRequest } from "./requests/CreateShippingPolicyRequest";
+import { UpdateShippingPolicyRequest } from "./requests/UpdateShippingPolicyRequest";
 
 export class ShippingPolicies extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/shipping-policies';
+  private static readonly BASE_PATH: string =
+    "/api/logistics/pvt/shipping-policies";
 
   /**
    * Lists existing shipping policies from carriers in your store, searching by their IDs.
@@ -28,16 +29,24 @@ export class ShippingPolicies extends AbstractApi {
    * Lists existing shipping policies from carriers in your store.
    */
   listShippingPolicies(): Promise<VtexHttpResponse> {
-    return this.vtexHttpClient.performRequest(ShippingPolicies.BASE_PATH, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      ShippingPolicies.BASE_PATH,
+      this.HTTP_METHODS.GET
+    );
   }
 
   /**
    * Creates new shipping policies from carriers in your store.
    * @param {CreateShippingPolicyRequest} shippingPolicy
    */
-  createShippingPolicy(shippingPolicy: CreateShippingPolicyRequest): Promise<VtexHttpResponse> {
-    return this.vtexHttpClient
-      .performRequest(ShippingPolicies.BASE_PATH, this.HTTP_METHODS.POST, shippingPolicy);
+  createShippingPolicy(
+    shippingPolicy: CreateShippingPolicyRequest
+  ): Promise<VtexHttpResponse> {
+    return this.vtexHttpClient.performRequest(
+      ShippingPolicies.BASE_PATH,
+      this.HTTP_METHODS.POST,
+      shippingPolicy
+    );
   }
 
   /**
@@ -45,9 +54,15 @@ export class ShippingPolicies extends AbstractApi {
    * @param {string} id
    * @param {UpdateShippingPolicyRequest} shippingPolicy
    */
-  updateShippingPolicy(id: string, shippingPolicy: UpdateShippingPolicyRequest)
-    : Promise<VtexHttpResponse> {
+  updateShippingPolicy(
+    id: string,
+    shippingPolicy: UpdateShippingPolicyRequest
+  ): Promise<VtexHttpResponse> {
     const path = `${ShippingPolicies.BASE_PATH}/${id}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, shippingPolicy);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      shippingPolicy
+    );
   }
 }

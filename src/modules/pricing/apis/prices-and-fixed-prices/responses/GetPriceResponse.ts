@@ -8,7 +8,7 @@ export interface FixedPrice {
   value?: number;
   listPrice?: string;
   minQuantity?: number;
-  dateRange?: DateRange
+  dateRange?: DateRange;
 }
 
 export interface GetPriceResponse {

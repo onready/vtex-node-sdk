@@ -1,9 +1,10 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { CreateOrUpdatePolygonRequest } from './requests/CreateOrUpdatePolygonRequest';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { CreateOrUpdatePolygonRequest } from "./requests/CreateOrUpdatePolygonRequest";
 
 export class Polygons extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/configuration/geoshape';
+  private static readonly BASE_PATH: string =
+    "/api/logistics/pvt/configuration/geoshape";
 
   /**
    * Lists stored polygons.
@@ -19,9 +20,14 @@ export class Polygons extends AbstractApi {
    * Creates or updates your store's polygons by geoshape coordinates and polygon name.
    * @param {CreateOrUpdatePolygonRequest} polygonData
    */
-  createOrUpdatePolygon(polygonData: CreateOrUpdatePolygonRequest): Promise<VtexHttpResponse> {
-    return this.vtexHttpClient
-      .performRequest(Polygons.BASE_PATH, this.HTTP_METHODS.PUT, polygonData);
+  createOrUpdatePolygon(
+    polygonData: CreateOrUpdatePolygonRequest
+  ): Promise<VtexHttpResponse> {
+    return this.vtexHttpClient.performRequest(
+      Polygons.BASE_PATH,
+      this.HTTP_METHODS.PUT,
+      polygonData
+    );
   }
 
   /**

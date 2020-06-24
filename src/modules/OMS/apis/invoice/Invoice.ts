@@ -1,12 +1,13 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { OrderInvoiceNotificationRequest } from './requests/OrderInvoiceNotificationRequest';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { OrderInvoiceNotificationResponse } from './responses/OrderInvoiceNotificationResponse';
-import { SendTrackingNumberRequest } from './requests/SendTrackingNumberRequest';
-import { SendTrackingNumberResponse } from './responses/SendTrackingNumberResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { OrderInvoiceNotificationRequest } from "./requests/OrderInvoiceNotificationRequest";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { OrderInvoiceNotificationResponse } from "./responses/OrderInvoiceNotificationResponse";
+import { SendTrackingNumberRequest } from "./requests/SendTrackingNumberRequest";
+import { SendTrackingNumberResponse } from "./responses/SendTrackingNumberResponse";
 
 export class Invoice extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/oms/pvt/orders/{orderId}/invoice';
+  private static readonly BASE_PATH: string =
+    "/api/oms/pvt/orders/{orderId}/invoice";
 
   /**
    * Sends Order invoice notifications.
@@ -17,10 +18,16 @@ export class Invoice extends AbstractApi {
    * @param {string} orderId
    * @param {OrderInvoiceNotificationRequest} invoiceData
    */
-  orderInvoiceNotification(orderId: string, invoiceData: OrderInvoiceNotificationRequest)
-    : Promise<VtexHttpResponse<OrderInvoiceNotificationResponse>> {
-    const path = Invoice.BASE_PATH.replace('{orderId}', orderId);
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, invoiceData);
+  orderInvoiceNotification(
+    orderId: string,
+    invoiceData: OrderInvoiceNotificationRequest
+  ): Promise<VtexHttpResponse<OrderInvoiceNotificationResponse>> {
+    const path = Invoice.BASE_PATH.replace("{orderId}", orderId);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      invoiceData
+    );
   }
 
   /**
@@ -29,10 +36,18 @@ export class Invoice extends AbstractApi {
    * @param {string} invoiceNumber
    * @param {SendTrackingNumberRequest} trackingData
    */
-  sendTrackingNumber(orderId: string, invoiceNumber: string,
-    trackingData: SendTrackingNumberRequest)
-    : Promise<VtexHttpResponse<SendTrackingNumberResponse>> {
-    const path = Invoice.BASE_PATH.replace('{orderId}', orderId).concat(`/${invoiceNumber}`);
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PATCH, trackingData);
+  sendTrackingNumber(
+    orderId: string,
+    invoiceNumber: string,
+    trackingData: SendTrackingNumberRequest
+  ): Promise<VtexHttpResponse<SendTrackingNumberResponse>> {
+    const path = Invoice.BASE_PATH.replace("{orderId}", orderId).concat(
+      `/${invoiceNumber}`
+    );
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PATCH,
+      trackingData
+    );
   }
 }

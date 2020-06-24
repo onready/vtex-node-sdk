@@ -1,5 +1,5 @@
 interface GeoShape {
-  coordinates?: Array<Array<Array<number>>>
+  coordinates?: Array<Array<Array<number>>>;
 }
 
 export interface CreateOrUpdatePolygonRequest {

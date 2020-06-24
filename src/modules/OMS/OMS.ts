@@ -1,12 +1,12 @@
-import { VtexHttpClient } from '../../utils/VtexHttpClient';
-import { Orders } from './apis/orders';
-import { Invoice } from './apis/invoice';
-import { Tracking } from './apis/tracking';
-import { Payment } from './apis/payment';
-import { Feed } from './apis/feed/v3';
-import { OrderHook } from './apis/order-hook';
-import { ExportOrderReport } from './apis/export-order-report';
-import { UserOrders } from './apis/user-orders';
+import { VtexHttpClient } from "../../utils/VtexHttpClient";
+import { Orders } from "./apis/orders";
+import { Invoice } from "./apis/invoice";
+import { Tracking } from "./apis/tracking";
+import { Payment } from "./apis/payment";
+import { Feed } from "./apis/feed/v3";
+import { OrderHook } from "./apis/order-hook";
+import { ExportOrderReport } from "./apis/export-order-report";
+import { UserOrders } from "./apis/user-orders";
 
 export class OMS {
   /**

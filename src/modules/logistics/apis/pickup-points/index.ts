@@ -1,1 +1,1 @@
-export * from './PickupPoints';
+export * from "./PickupPoints";
