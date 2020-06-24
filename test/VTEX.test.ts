@@ -53,6 +53,7 @@ describe("VTEX tests", () => {
       expect(instance.catalog.attachment).not.toBe(null);
       expect(instance.catalog.product).not.toBe(null);
       expect(instance.catalog.tradePolicy).not.toBe(null);
+      expect(instance.catalog.sku).not.toBe(null);
       done();
     }));
 
