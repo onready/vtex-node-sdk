@@ -6,6 +6,7 @@ import { Product } from "./apis/product";
 import { TradePolicy } from "./apis/trade-policy";
 import { SKU } from "./apis/sku";
 import { Specification } from "./apis/specification";
+import { Collection } from "./apis/collection";
 
 export class Catalog {
   /**
@@ -43,6 +44,11 @@ export class Catalog {
    */
   readonly specification: Specification;
 
+  /**
+   * Collection API
+   */
+  readonly collection: Collection;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
@@ -51,5 +57,6 @@ export class Catalog {
     this.tradePolicy = new TradePolicy(vtexHttpClient);
     this.sku = new SKU(vtexHttpClient);
     this.specification = new Specification(vtexHttpClient);
+    this.collection = new Collection(vtexHttpClient);
   }
 }
