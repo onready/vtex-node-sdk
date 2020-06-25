@@ -5,6 +5,7 @@ import { Attachment } from "./apis/attachment";
 import { Product } from "./apis/product";
 import { TradePolicy } from "./apis/trade-policy";
 import { SKU } from "./apis/sku";
+import { Specification } from "./apis/specification";
 
 export class Catalog {
   /**
@@ -37,6 +38,11 @@ export class Catalog {
    */
   readonly sku: SKU;
 
+  /**
+   * Specification API
+   */
+  readonly specification: Specification;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
@@ -44,5 +50,6 @@ export class Catalog {
     this.product = new Product(vtexHttpClient);
     this.tradePolicy = new TradePolicy(vtexHttpClient);
     this.sku = new SKU(vtexHttpClient);
+    this.specification = new Specification(vtexHttpClient);
   }
 }
