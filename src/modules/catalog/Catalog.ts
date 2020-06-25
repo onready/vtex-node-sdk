@@ -10,6 +10,7 @@ import { Collection } from "./apis/collection";
 import { Subcollection } from "./apis/subcollection";
 import { Supplier } from "./apis/supplier";
 import { SalesChannel } from "./apis/sales-channel";
+import { Seller } from "./apis/seller";
 
 export class Catalog {
   /**
@@ -67,6 +68,11 @@ export class Catalog {
    */
   readonly salesChannel: SalesChannel;
 
+  /**
+   * Seller Channel API
+   */
+  readonly seller: Seller;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
@@ -79,5 +85,6 @@ export class Catalog {
     this.subcollection = new Subcollection(vtexHttpClient);
     this.supplier = new Supplier(vtexHttpClient);
     this.salesChannel = new SalesChannel(vtexHttpClient);
+    this.seller = new Seller(vtexHttpClient);
   }
 }
