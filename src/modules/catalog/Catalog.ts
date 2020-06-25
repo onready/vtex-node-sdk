@@ -5,6 +5,13 @@ import { Attachment } from "./apis/attachment";
 import { Product } from "./apis/product";
 import { TradePolicy } from "./apis/trade-policy";
 import { SKU } from "./apis/sku";
+import { Specification } from "./apis/specification";
+import { Collection } from "./apis/collection";
+import { Subcollection } from "./apis/subcollection";
+import { Supplier } from "./apis/supplier";
+import { SalesChannel } from "./apis/sales-channel";
+import { Seller } from "./apis/seller";
+import { Others } from "./apis/others";
 
 export class Catalog {
   /**
@@ -37,6 +44,41 @@ export class Catalog {
    */
   readonly sku: SKU;
 
+  /**
+   * Specification API
+   */
+  readonly specification: Specification;
+
+  /**
+   * Collection API
+   */
+  readonly collection: Collection;
+
+  /**
+   * Subcollection API
+   */
+  readonly subcollection: Subcollection;
+
+  /**
+   * Supplier API
+   */
+  readonly supplier: Supplier;
+
+  /**
+   * Sales Channel API
+   */
+  readonly salesChannel: SalesChannel;
+
+  /**
+   * Seller Channel API
+   */
+  readonly seller: Seller;
+
+  /**
+   * Other Catalog API's
+   */
+  readonly others: Others;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
@@ -44,5 +86,12 @@ export class Catalog {
     this.product = new Product(vtexHttpClient);
     this.tradePolicy = new TradePolicy(vtexHttpClient);
     this.sku = new SKU(vtexHttpClient);
+    this.specification = new Specification(vtexHttpClient);
+    this.collection = new Collection(vtexHttpClient);
+    this.subcollection = new Subcollection(vtexHttpClient);
+    this.supplier = new Supplier(vtexHttpClient);
+    this.salesChannel = new SalesChannel(vtexHttpClient);
+    this.seller = new Seller(vtexHttpClient);
+    this.others = new Others(vtexHttpClient);
   }
 }
