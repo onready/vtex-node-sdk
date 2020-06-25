@@ -1,1 +1,1 @@
-export * from "./SubCollection";
+export * from "./Subcollection";
