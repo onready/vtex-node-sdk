@@ -19,7 +19,17 @@
   "keywords": [
     "vtex",
     "vtex-sdk",
-    "vtex-node-sdk"
+    "vtex-node-sdk",
+    "onready",
+    "vtex-api",
+    "sdk-node-vtex",
+    "typescript",
+    "api-vtex",
+    "sdk-vtex",
+    "node",
+    "vtex-node",
+    "node-vtex",
+    "node-vtex-sdk"
   ],
   "scripts": {
     "build": "rimraf dist && tsc",
