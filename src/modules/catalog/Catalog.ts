@@ -9,6 +9,7 @@ import { Specification } from "./apis/specification";
 import { Collection } from "./apis/collection";
 import { Subcollection } from "./apis/subcollection";
 import { Supplier } from "./apis/supplier";
+import { SalesChannel } from "./apis/sales-channel";
 
 export class Catalog {
   /**
@@ -61,6 +62,11 @@ export class Catalog {
    */
   readonly supplier: Supplier;
 
+  /**
+   * Sales Channel API
+   */
+  readonly salesChannel: SalesChannel;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.skuService = new SKUService(vtexHttpClient);
     this.categoryAndBrand = new CategoryAndBrand(vtexHttpClient);
@@ -72,5 +78,6 @@ export class Catalog {
     this.collection = new Collection(vtexHttpClient);
     this.subcollection = new Subcollection(vtexHttpClient);
     this.supplier = new Supplier(vtexHttpClient);
+    this.salesChannel = new SalesChannel(vtexHttpClient);
   }
 }
