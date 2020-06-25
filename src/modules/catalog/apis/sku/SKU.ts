@@ -16,6 +16,8 @@ import { AssociateSKUAttachmentRequest } from "./requests/AssociateSKUAttachment
 import { AssociateSKUAttachmentResponse } from "./responses/AssociateSKUAttachmentResponse";
 import { CreateSKUComplementRequest } from "./requests/CreateSKUComplementRequest";
 import { CreateSKUComplementResponse } from "./responses/CreateSKUComplementResponse";
+import { AssociateAttachmentsToSKURequest } from "./requests/AssociateAttachmentsToSKURequest";
+import { AssociateAttachmentsToSKUResponse } from "./responses/AssociateAttachmentsToSKUResponse";
 
 export class SKU extends AbstractApi {
   private static readonly BASE_PATH: string = "/api/catalog";
@@ -374,5 +376,101 @@ export class SKU extends AbstractApi {
   ): Promise<VtexHttpResponse> {
     const path = `${SKU.BASE_PATH}/pvt/skuattachment/${attachmentId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Deletes a previously existing Complement of an SKU by SkuId
+   * @param {string} skuComplementId
+   */
+  deleteSKUComplementBySkuId(
+    skuComplementId: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/skucomplement/${skuComplementId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Amplifies a cart data by associating attachments to SKUs.
+   * This request removes existing SKU attachment associations and recreates
+   * the associations with the attachments being sent.
+   * @param {AssociateAttachmentsToSKURequest} attachmentsData
+   */
+  associateAttachmentsToSKU(
+    attachmentsData: AssociateAttachmentsToSKURequest
+  ): Promise<VtexHttpResponse<AssociateAttachmentsToSKUResponse>> {
+    const path = `${SKU.BASE_PATH}_system/pvt/sku/associateattachments`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      attachmentsData
+    );
+  }
+
+  /**
+   * Creates or updates the EAN value of an SKU
+   * @param {string} skuId
+   * @param {string} ean
+   */
+  createSkuEAN(skuId: string, ean: string): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/ean/${ean}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST);
+  }
+
+  /**
+   * Deletes the EAN value of an SKU
+   * @param {string} skuId
+   * @param {string} ean
+   */
+  deleteSkuEAN(skuId: string, ean: string): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/ean/${ean}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Retrieves general information about a component of a Kit
+   * @param {string} kitId
+   */
+  getSKUKit(kitId: string): Promise<VtexHttpResponse<GetSKUKitResponse>> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunitkit/${kitId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+  }
+
+  /**
+   * Deletes a specific Kit’s component based on its Kit ID
+   * @param {string} kitId
+   */
+  deleteSKUKitByKitId(kitId: string): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunitkit/${kitId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Deletes a specific SKU Specification
+   * @param {string} skuId
+   * @param {string} specificationId
+   */
+  deleteSKUSpecification(
+    skuId: string,
+    specificationId: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/stockkeepingunit/${skuId}/specification/${specificationId}`;
+    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+  }
+
+  /**
+   * Deletes a previously existing Complement of an SKU
+   * @param {string} skuAttachmentId
+   * @param {string} skuAttachmentData
+   */
+  deleteSKUComplement(
+    skuAttachmentId: string,
+    skuAttachmentData: CreateSKUComplementRequest
+  ): Promise<VtexHttpResponse> {
+    const path = `${SKU.BASE_PATH}/pvt/skuattachment/${skuAttachmentId}`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.DELETE,
+      skuAttachmentData
+    );
   }
 }
