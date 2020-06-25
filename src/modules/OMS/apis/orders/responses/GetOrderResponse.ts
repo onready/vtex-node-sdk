@@ -142,7 +142,7 @@ interface ShippingData {
   address?: Address;
   logisticsInfo?: Array<LogisticsInfo>;
   trackingHints?: string;
-  selectedAddresses?: Array<SelectedAddress>
+  selectedAddresses?: Array<SelectedAddress>;
 }
 
 interface Transaction {

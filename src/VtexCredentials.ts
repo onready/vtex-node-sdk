@@ -12,7 +12,12 @@ export class VtexCredentials {
    * @param {string} appKey
    * @param {string} appToken
    */
-  constructor(store: string, appKey: string, appToken: string, environment: string) {
+  constructor(
+    store: string,
+    appKey: string,
+    appToken: string,
+    environment: string
+  ) {
     this.store = store;
     this.appKey = appKey;
     this.appToken = appToken;

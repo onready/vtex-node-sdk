@@ -1,14 +1,14 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { OrderChangeRequest } from './requests/OrderChangeRequest';
-import { OrderChangeResponse } from './responses/OrderChangeResponse';
-import { GetOrderResponse } from './responses/GetOrderResponse';
-import { ListOrdersResponse } from './responses/ListOrdersResponse';
-import { AddLogInOrderRequest } from './requests/AddLogInOrderRequest';
-import { ListOrderAttachmentResponse } from './responses/ListOrderAttachmentResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { OrderChangeRequest } from "./requests/OrderChangeRequest";
+import { OrderChangeResponse } from "./responses/OrderChangeResponse";
+import { GetOrderResponse } from "./responses/GetOrderResponse";
+import { ListOrdersResponse } from "./responses/ListOrdersResponse";
+import { AddLogInOrderRequest } from "./requests/AddLogInOrderRequest";
+import { ListOrderAttachmentResponse } from "./responses/ListOrderAttachmentResponse";
 
 export class Orders extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/oms/pvt/orders';
+  private static readonly BASE_PATH: string = "/api/oms/pvt/orders";
 
   /**
    * Lists order details by searching through order ID.
@@ -53,10 +53,16 @@ export class Orders extends AbstractApi {
    * @param {string} orderId
    * @param {OrderChangeRequest} orderChange
    */
-  registerChangeOnOrder(orderId: string, orderChange: OrderChangeRequest)
-    : Promise<VtexHttpResponse<OrderChangeResponse>> {
+  registerChangeOnOrder(
+    orderId: string,
+    orderChange: OrderChangeRequest
+  ): Promise<VtexHttpResponse<OrderChangeResponse>> {
     const path = `${Orders.BASE_PATH}/${orderId}/changes`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, orderChange);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      orderChange
+    );
   }
 
   /**
@@ -64,9 +70,16 @@ export class Orders extends AbstractApi {
    * @param {string} orderId
    * @param {AddLogInOrderRequest} log
    */
-  addLogInOrder(orderId: string, log: AddLogInOrderRequest): Promise<VtexHttpResponse> {
+  addLogInOrder(
+    orderId: string,
+    log: AddLogInOrderRequest
+  ): Promise<VtexHttpResponse> {
     const path = `${Orders.BASE_PATH}/${orderId}/interactions`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, log);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      log
+    );
   }
 
   /**
@@ -74,8 +87,10 @@ export class Orders extends AbstractApi {
    * @param {string} orderId
    * @param {string} attachmentName
    */
-  listOrderAttachment(orderId: string, attachmentName: string)
-    : Promise<VtexHttpResponse<ListOrderAttachmentResponse>> {
+  listOrderAttachment(
+    orderId: string,
+    attachmentName: string
+  ): Promise<VtexHttpResponse<ListOrderAttachmentResponse>> {
     const path = `${Orders.BASE_PATH}/${orderId}/message-attachment?attachmentName=${attachmentName}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }

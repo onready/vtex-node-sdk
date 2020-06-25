@@ -1,1 +1,1 @@
-export * from './MasterData';
+export * from "./MasterData";

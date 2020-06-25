@@ -1,10 +1,10 @@
-import { AbstractApi } from '../../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../../utils/VtexHttpResponse';
-import { CreateNewDocumentResponse } from './responses/CreateNewDocumentResponse';
-import { GetDocumentResponse } from './responses/GetDocumentResponse';
+import { AbstractApi } from "../../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../../utils/VtexHttpResponse";
+import { CreateNewDocumentResponse } from "./responses/CreateNewDocumentResponse";
+import { GetDocumentResponse } from "./responses/GetDocumentResponse";
 
 export class Documents extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/dataentities';
+  private static readonly BASE_PATH: string = "/api/dataentities";
 
   /**
    *
@@ -12,10 +12,19 @@ export class Documents extends AbstractApi {
    * @param {any} documentData
    * @param {string} params Example: _schema=schema1
    */
-  createNewDocument(dataEntityName: string, documentData: any, params?: string)
-    : Promise<VtexHttpResponse<CreateNewDocumentResponse>> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, documentData);
+  createNewDocument(
+    dataEntityName: string,
+    documentData: any,
+    params?: string
+  ): Promise<VtexHttpResponse<CreateNewDocumentResponse>> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${
+      params || ""
+    }`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      documentData
+    );
   }
 
   /**
@@ -24,10 +33,19 @@ export class Documents extends AbstractApi {
    * @param {any} documentData
    * @param {string} params Example: _schema=schema1
    */
-  createOrUpdateEntireDocument(dataEntityName: string, documentData: any, params?: string)
-    : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, documentData);
+  createOrUpdateEntireDocument(
+    dataEntityName: string,
+    documentData: any,
+    params?: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${
+      params || ""
+    }`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      documentData
+    );
   }
 
   /**
@@ -36,10 +54,19 @@ export class Documents extends AbstractApi {
    * @param {any} documentData
    * @param {string} params Example: _schema=schema1
    */
-  createOrUpdatePartialDocument(dataEntityName: string, documentData: any, params?: string)
-    : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${params}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PATCH, documentData);
+  createOrUpdatePartialDocument(
+    dataEntityName: string,
+    documentData: any,
+    params?: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents?${
+      params || ""
+    }`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PATCH,
+      documentData
+    );
   }
 
   /**
@@ -48,9 +75,14 @@ export class Documents extends AbstractApi {
    * @param {string} id
    * @param {string} params Example: _schema=schema1&_where=where-statement
    */
-  getDocument(dataEntityName: string, id: string, params?: string)
-    : Promise<VtexHttpResponse<GetDocumentResponse>> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
+  getDocument(
+    dataEntityName: string,
+    id: string,
+    params?: string
+  ): Promise<VtexHttpResponse<GetDocumentResponse>> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${
+      params || ""
+    }`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 
@@ -61,10 +93,20 @@ export class Documents extends AbstractApi {
    * @param {any} documentData
    * @param {string} params Example: _schema=schema1&_where=where-statement
    */
-  updateEntireDocument(dataEntityName: string, id: string, documentData: any, params?: string)
-    : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, documentData);
+  updateEntireDocument(
+    dataEntityName: string,
+    id: string,
+    documentData: any,
+    params?: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${
+      params || ""
+    }`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      documentData
+    );
   }
 
   /**
@@ -74,10 +116,20 @@ export class Documents extends AbstractApi {
    * @param {any} documentData
    * @param {string} params Example: _schema=schema1&_where=where-statement
    */
-  updatePartialDocument(dataEntityName: string, id: string, documentData: any, params?: string)
-    : Promise<VtexHttpResponse> {
-    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${params}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PATCH, documentData);
+  updatePartialDocument(
+    dataEntityName: string,
+    id: string,
+    documentData: any,
+    params?: string
+  ): Promise<VtexHttpResponse> {
+    const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}?${
+      params || ""
+    }`;
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PATCH,
+      documentData
+    );
   }
 
   /**
@@ -85,7 +137,10 @@ export class Documents extends AbstractApi {
    * @param {string} dataEntityName
    * @param {string} id
    */
-  deleteDocument(dataEntityName: string, id: string): Promise<VtexHttpResponse> {
+  deleteDocument(
+    dataEntityName: string,
+    id: string
+  ): Promise<VtexHttpResponse> {
     const path = `${Documents.BASE_PATH}/${dataEntityName}/documents/${id}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
   }

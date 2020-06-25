@@ -1,6 +1,6 @@
-import { AbstractApi } from '../../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../../utils/VtexHttpResponse';
-import { ValidateDocumentByClustersRequestItem } from './requests/ValidateDocumentByClustersRequestItem';
+import { AbstractApi } from "../../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../../utils/VtexHttpResponse";
+import { ValidateDocumentByClustersRequestItem } from "./requests/ValidateDocumentByClustersRequestItem";
 
 export class Clusters extends AbstractApi {
   /**
@@ -9,12 +9,15 @@ export class Clusters extends AbstractApi {
    * @param {string} id
    * @param {Array<ValidateDocumentByClustersRequestItem>} rules
    */
-  validateDocumentByClusters(dataEntityName: string, id: string,
-    rules: Array<ValidateDocumentByClustersRequestItem>): Promise<VtexHttpResponse> {
+  validateDocumentByClusters(
+    dataEntityName: string,
+    id: string,
+    rules: Array<ValidateDocumentByClustersRequestItem>
+  ): Promise<VtexHttpResponse> {
     return this.vtexHttpClient.performRequest(
       `/api/dataentities/${dataEntityName}/documents/${id}/clusters`,
       this.HTTP_METHODS.POST,
-      rules,
+      rules
     );
   }
 }

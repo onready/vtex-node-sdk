@@ -1,28 +1,35 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { CreateOrUpdatePickupPointRequest } from './requests/CreateOrUpdatePickupPointRequest';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { CreateOrUpdatePickupPointRequest } from "./requests/CreateOrUpdatePickupPointRequest";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
 
 export class PickupPoints extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/logistics/pvt/configuration/pickuppoints';
+  private static readonly BASE_PATH: string =
+    "/api/logistics/pvt/configuration/pickuppoints";
 
   /**
    * Creates or updates pickup points in your store by Pickup Point ID.
    * @param {string} pickupPointId
    * @param {CreateOrUpdatePickupPointRequest} pickupPointData
    */
-  createOrUpdatePickupPoint(pickupPointId: string,
-    pickupPointData: CreateOrUpdatePickupPointRequest)
-    : Promise<VtexHttpResponse<CreateOrUpdatePickupPointRequest>> {
+  createOrUpdatePickupPoint(
+    pickupPointId: string,
+    pickupPointData: CreateOrUpdatePickupPointRequest
+  ): Promise<VtexHttpResponse<CreateOrUpdatePickupPointRequest>> {
     const path = `${PickupPoints.BASE_PATH}/${pickupPointId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, pickupPointData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      pickupPointData
+    );
   }
 
   /**
    * Lists your store's pickup points while searching by ID.
    * @param {string} pickupPointId
    */
-  listPickupPointById(pickupPointId: string)
-    : Promise<VtexHttpResponse<CreateOrUpdatePickupPointRequest>> {
+  listPickupPointById(
+    pickupPointId: string
+  ): Promise<VtexHttpResponse<CreateOrUpdatePickupPointRequest>> {
     const path = `${PickupPoints.BASE_PATH}/${pickupPointId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }

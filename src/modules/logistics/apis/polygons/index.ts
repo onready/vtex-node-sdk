@@ -1,1 +1,1 @@
-export * from './Polygons';
+export * from "./Polygons";

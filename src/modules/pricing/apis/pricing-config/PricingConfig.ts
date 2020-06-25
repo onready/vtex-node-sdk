@@ -1,10 +1,10 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { GetPricingConfigResponse } from './responses/GetPricingConfigResponse';
-import { GetPricingV2ActiveStatusResponse } from './responses/GetPricingV2ActiveStatusResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { GetPricingConfigResponse } from "./responses/GetPricingConfigResponse";
+import { GetPricingV2ActiveStatusResponse } from "./responses/GetPricingV2ActiveStatusResponse";
 
 export class PricingConfig extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/pricing';
+  private static readonly BASE_PATH: string = "/api/pricing";
 
   /**
    * Retrieves Pricing Module Configuration
@@ -17,7 +17,9 @@ export class PricingConfig extends AbstractApi {
   /**
    * Gets Pricing v2 Active Status
    */
-  getPricingV2ActiveStatus(): Promise<VtexHttpResponse<GetPricingV2ActiveStatusResponse>> {
+  getPricingV2ActiveStatus(): Promise<
+    VtexHttpResponse<GetPricingV2ActiveStatusResponse>
+  > {
     const path = `${PricingConfig.BASE_PATH}/migration`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }

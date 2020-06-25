@@ -1,14 +1,14 @@
-import { VtexHttpClient } from '../../utils/VtexHttpClient';
-import { ShippingPolicies } from './apis/shipping-policies';
-import { Carriers } from './apis/carriers';
-import { Docks } from './apis/docks';
-import { Warehouses } from './apis/warehouses';
-import { Inventory } from './apis/inventory';
-import { Holidays } from './apis/holidays';
-import { Reservations } from './apis/reservations';
-import { SLA } from './apis/SLA';
-import { PickupPoints } from './apis/pickup-points';
-import { Polygons } from './apis/polygons';
+import { VtexHttpClient } from "../../utils/VtexHttpClient";
+import { ShippingPolicies } from "./apis/shipping-policies";
+import { Carriers } from "./apis/carriers";
+import { Docks } from "./apis/docks";
+import { Warehouses } from "./apis/warehouses";
+import { Inventory } from "./apis/inventory";
+import { Holidays } from "./apis/holidays";
+import { Reservations } from "./apis/reservations";
+import { SLA } from "./apis/SLA";
+import { PickupPoints } from "./apis/pickup-points";
+import { Polygons } from "./apis/polygons";
 
 export class Logistics {
   /**

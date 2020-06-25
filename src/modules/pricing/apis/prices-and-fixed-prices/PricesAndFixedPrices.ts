@@ -1,10 +1,10 @@
-import { AbstractApi } from '../../../AbstractApi';
-import { VtexHttpResponse } from '../../../../utils/VtexHttpResponse';
-import { GetPriceResponse, FixedPrice } from './responses/GetPriceResponse';
-import { GetComputedPriceByPriceTableResponse } from './responses/GetComputedPriceByPriceTableResponse';
+import { AbstractApi } from "../../../AbstractApi";
+import { VtexHttpResponse } from "../../../../utils/VtexHttpResponse";
+import { GetPriceResponse, FixedPrice } from "./responses/GetPriceResponse";
+import { GetComputedPriceByPriceTableResponse } from "./responses/GetComputedPriceByPriceTableResponse";
 
 export class PricesAndFixedPrices extends AbstractApi {
-  private static readonly BASE_PATH: string = '/api/pricing/prices/';
+  private static readonly BASE_PATH: string = "/api/pricing/prices/";
 
   /**
    * Retrieves price data by SKU Id It is possible that on the property fixedPrices
@@ -34,10 +34,16 @@ export class PricesAndFixedPrices extends AbstractApi {
    * @param {string} skuId
    * @param {GetPriceResponse} priceData
    */
-  createOrEditPriceOrFixedPrice(skuId: string, priceData: GetPriceResponse)
-    : Promise<VtexHttpResponse> {
+  createOrEditPriceOrFixedPrice(
+    skuId: string,
+    priceData: GetPriceResponse
+  ): Promise<VtexHttpResponse> {
     const path = `${PricesAndFixedPrices.BASE_PATH}/${skuId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.PUT, priceData);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.PUT,
+      priceData
+    );
   }
 
   /**
@@ -57,10 +63,17 @@ export class PricesAndFixedPrices extends AbstractApi {
    * @param {string} priceTableId
    * @param {Array<FixedPrice>} fixedPrices
    */
-  createOrEditFixedPricesOnPriceTable(skuId: string, priceTableId: string,
-    fixedPrices: Array<FixedPrice>): Promise<VtexHttpResponse> {
+  createOrEditFixedPricesOnPriceTable(
+    skuId: string,
+    priceTableId: string,
+    fixedPrices: Array<FixedPrice>
+  ): Promise<VtexHttpResponse> {
     const path = `${PricesAndFixedPrices.BASE_PATH}/${skuId}/fixed/${priceTableId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.POST, fixedPrices);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.POST,
+      fixedPrices
+    );
   }
 
   /**
@@ -68,8 +81,10 @@ export class PricesAndFixedPrices extends AbstractApi {
    * @param {string} skuId
    * @param {string} priceTableId
    */
-  getFixedPricesOnPriceTable(skuId: string, priceTableId: string)
-    : Promise<VtexHttpResponse<Array<FixedPrice>>> {
+  getFixedPricesOnPriceTable(
+    skuId: string,
+    priceTableId: string
+  ): Promise<VtexHttpResponse<Array<FixedPrice>>> {
     const path = `${PricesAndFixedPrices.BASE_PATH}/${skuId}/fixed/${priceTableId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
@@ -79,7 +94,10 @@ export class PricesAndFixedPrices extends AbstractApi {
    * @param {string} skuId
    * @param {string} priceTableId
    */
-  deleteFixedPricesOnPriceTable(skuId: string, priceTableId: string): Promise<VtexHttpResponse> {
+  deleteFixedPricesOnPriceTable(
+    skuId: string,
+    priceTableId: string
+  ): Promise<VtexHttpResponse> {
     const path = `${PricesAndFixedPrices.BASE_PATH}/${skuId}/fixed/${priceTableId}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
   }
@@ -90,8 +108,11 @@ export class PricesAndFixedPrices extends AbstractApi {
    * @param {string} priceTableId
    * @param {string} params Example: categoryIds=1&brandId=1&quantity=2
    */
-  getComputedPriceByPriceTable(skuId: string, priceTableId: string, params: string)
-    : Promise<VtexHttpResponse<GetComputedPriceByPriceTableResponse>> {
+  getComputedPriceByPriceTable(
+    skuId: string,
+    priceTableId: string,
+    params: string
+  ): Promise<VtexHttpResponse<GetComputedPriceByPriceTableResponse>> {
     const path = `${PricesAndFixedPrices.BASE_PATH}/${skuId}/computed/${priceTableId}?${params}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
