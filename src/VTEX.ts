@@ -5,6 +5,7 @@ import { Logistics } from "./modules/logistics";
 import { Pricing } from "./modules/pricing";
 import { MasterData } from "./modules/master-data/v2";
 import { Catalog } from "./modules/catalog";
+import { Search } from "./modules/search";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -55,6 +56,11 @@ export class VTEX {
   readonly catalog: Catalog;
 
   /**
+   * Search Module
+   */
+  readonly search: Search;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -81,5 +87,6 @@ export class VTEX {
     this.pricing = new Pricing(vtexHttpClient);
     this.masterData = new MasterData(vtexHttpClient);
     this.catalog = new Catalog(vtexHttpClient);
+    this.search = new Search(vtexHttpClient);
   }
 }

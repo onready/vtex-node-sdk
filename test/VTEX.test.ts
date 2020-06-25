@@ -61,6 +61,9 @@ describe("VTEX tests", () => {
       expect(instance.catalog.salesChannel).not.toBe(null);
       expect(instance.catalog.seller).not.toBe(null);
       expect(instance.catalog.others).not.toBe(null);
+
+      expect(instance.search).not.toBe(null);
+      expect(instance.search.crossSelling).not.toBe(null);
       done();
     }));
 
