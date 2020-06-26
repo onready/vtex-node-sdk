@@ -6,6 +6,8 @@
 
 ## VTEX NODE SDK
 
+![Node.js CI](https://github.com/onready/vtex-node-sdk/workflows/Node.js%20CI/badge.svg)
+
 - :hammer: Built 100% with Typescript.
 - :muscle: 0 dependencies. It uses the native `https` Node module.
 - :tada: Promise based.
