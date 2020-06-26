@@ -6,7 +6,12 @@
 
 ## VTEX NODE SDK
 
-![Node.js CI](https://github.com/onready/vtex-node-sdk/workflows/Node.js%20CI/badge.svg)
+<p>
+  <a href="https://www.npmjs.com/package/@onreadydesa/vtex-node-sdk"><img src="https://img.shields.io/npm/v/@onreadydesa/vtex-node-sdk" alt="npm version" height="20"></a>
+  <img src="https://github.com/onready/vtex-node-sdk/workflows/Node.js%20CI/badge.svg" alt="node-js-ci" height="20">
+  <img src="https://img.shields.io/npm/dm/@onreadydesa/vtex-node-sdk" alt="downloads" height="20">
+  <img src="https://img.shields.io/npm/l/@onreadydesa/vtex-node-sdk" alt="license" height="20">
+</p>
 
 - :hammer: Built 100% with Typescript.
 - :muscle: 0 dependencies. It uses the native `https` Node module.
