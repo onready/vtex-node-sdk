@@ -2,6 +2,7 @@ import { VtexHttpClient } from "../../utils/VtexHttpClient";
 import { CrossSelling } from "./apis/cross-selling";
 import { Search as SearchApi } from "./apis/search";
 import { Facets } from "./apis/facets";
+import { Autocomplete } from "./apis/autocomplete";
 
 export class Search {
   /**
@@ -19,9 +20,15 @@ export class Search {
    */
   readonly facets: Facets;
 
+  /**
+   * Autocomplete API
+   */
+  readonly autocomplete: Autocomplete;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.crossSelling = new CrossSelling(vtexHttpClient);
     this.search = new SearchApi(vtexHttpClient);
     this.facets = new Facets(vtexHttpClient);
+    this.autocomplete = new Autocomplete(vtexHttpClient);
   }
 }

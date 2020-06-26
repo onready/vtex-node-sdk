@@ -66,6 +66,7 @@ describe("VTEX tests", () => {
       expect(instance.search.crossSelling).not.toBe(null);
       expect(instance.search.search).not.toBe(null);
       expect(instance.search.facets).not.toBe(null);
+      expect(instance.search.autocomplete).not.toBe(null);
       done();
     }));
 
