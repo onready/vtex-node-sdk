@@ -93,7 +93,8 @@ Logistics | :white_check_mark: |
 Pricing  | :white_check_mark: |
 Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Catalog | :white_check_mark: |
-Search  | Comming soon... |
+Search  | :white_check_mark: |
+Payments Gateway  | Comming soon... |
 Antifraud Provider | :x: |
 Checkout | :x: |
 CMS | :x: |
@@ -103,7 +104,6 @@ Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
 License Manager | :x: |
 Payment Provider Protocol  | :x: |
-Payments Gateway  | :x: |
 Rates and Benefits  | :x: |
 Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
