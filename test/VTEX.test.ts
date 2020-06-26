@@ -64,6 +64,7 @@ describe("VTEX tests", () => {
 
       expect(instance.search).not.toBe(null);
       expect(instance.search.crossSelling).not.toBe(null);
+      expect(instance.search.search).not.toBe(null);
       done();
     }));
 
