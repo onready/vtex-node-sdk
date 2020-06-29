@@ -99,7 +99,8 @@ Pricing  | :white_check_mark: |
 Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Catalog | :white_check_mark: |
 Search  | :white_check_mark: |
-Payments Gateway  | Comming soon... |
+Payments Gateway  | :white_check_mark: |
+Suggestions  | Comming soon... |
 Antifraud Provider | :x: |
 Checkout | :x: |
 CMS | :x: |
@@ -112,5 +113,4 @@ Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
 Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
-Suggestions  | :x: |
 VTEX DO  | :x: |
