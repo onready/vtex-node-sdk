@@ -67,6 +67,12 @@ describe("VTEX tests", () => {
       expect(instance.search.search).not.toBe(null);
       expect(instance.search.facets).not.toBe(null);
       expect(instance.search.autocomplete).not.toBe(null);
+
+      expect(instance.paymentsGateway).not.toBe(null);
+      expect(instance.paymentsGateway.installments).not.toBe(null);
+      expect(instance.paymentsGateway.configuration).not.toBe(null);
+      expect(instance.paymentsGateway.transactionProcess).not.toBe(null);
+      expect(instance.paymentsGateway.transactionFlow).not.toBe(null);
       done();
     }));
 

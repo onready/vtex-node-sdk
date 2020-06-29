@@ -6,7 +6,12 @@
 
 ## VTEX NODE SDK
 
-![Node.js CI](https://github.com/onready/vtex-node-sdk/workflows/Node.js%20CI/badge.svg)
+<p>
+  <a href="https://www.npmjs.com/package/@onreadydesa/vtex-node-sdk" target="_blank"><img src="https://img.shields.io/npm/v/@onreadydesa/vtex-node-sdk" alt="npm version" height="20"></a>
+  <img src="https://github.com/onready/vtex-node-sdk/workflows/Node.js%20CI/badge.svg" alt="node-js-ci" height="20">
+  <img src="https://img.shields.io/npm/dm/@onreadydesa/vtex-node-sdk" alt="downloads" height="20">
+  <img src="https://img.shields.io/npm/l/@onreadydesa/vtex-node-sdk" alt="license" height="20">
+</p>
 
 - :hammer: Built 100% with Typescript.
 - :muscle: 0 dependencies. It uses the native `https` Node module.
@@ -94,7 +99,8 @@ Pricing  | :white_check_mark: |
 Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Catalog | :white_check_mark: |
 Search  | :white_check_mark: |
-Payments Gateway  | Comming soon... |
+Payments Gateway  | :white_check_mark: |
+Suggestions  | Comming soon... |
 Antifraud Provider | :x: |
 Checkout | :x: |
 CMS | :x: |
@@ -107,5 +113,4 @@ Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
 Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
-Suggestions  | :x: |
 VTEX DO  | :x: |
