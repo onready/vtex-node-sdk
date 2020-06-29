@@ -6,8 +6,10 @@ import { Pricing } from "./modules/pricing";
 import { MasterData } from "./modules/master-data/v2";
 import { Catalog } from "./modules/catalog";
 import { Search } from "./modules/search";
-import { PaymentsGateway } from "./modules/payments-gateway";
-import { VtexPaymentsHttpClient } from "./modules/payments-gateway/VtexPaymentsHttpClient";
+import {
+  PaymentsGateway,
+  VtexPaymentsHttpClient,
+} from "./modules/payments-gateway";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
