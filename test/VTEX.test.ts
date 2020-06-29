@@ -70,6 +70,7 @@ describe("VTEX tests", () => {
 
       expect(instance.paymentsGateway).not.toBe(null);
       expect(instance.paymentsGateway.installments).not.toBe(null);
+      expect(instance.paymentsGateway.configuration).not.toBe(null);
       done();
     }));
 
