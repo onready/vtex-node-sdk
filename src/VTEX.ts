@@ -6,6 +6,8 @@ import { Pricing } from "./modules/pricing";
 import { MasterData } from "./modules/master-data/v2";
 import { Catalog } from "./modules/catalog";
 import { Search } from "./modules/search";
+import { PaymentsGateway } from "./modules/payments-gateway";
+import { VtexPaymentsHttpClient } from "./modules/payments-gateway/VtexPaymentsHttpClient";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -61,6 +63,11 @@ export class VTEX {
   readonly search: Search;
 
   /**
+   * Payments Gateway Module
+   */
+  readonly paymentsGateway: PaymentsGateway;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -88,5 +95,8 @@ export class VTEX {
     this.masterData = new MasterData(vtexHttpClient);
     this.catalog = new Catalog(vtexHttpClient);
     this.search = new Search(vtexHttpClient);
+    this.paymentsGateway = new PaymentsGateway(
+      new VtexPaymentsHttpClient(vtexCredentials)
+    );
   }
 }
