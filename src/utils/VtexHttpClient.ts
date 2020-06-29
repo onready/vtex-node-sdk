@@ -4,7 +4,7 @@ import { VtexCredentials } from "../VtexCredentials";
 import { VtexHttpResponse } from "./VtexHttpResponse";
 
 export class VtexHttpClient {
-  private readonly defaultRequestOptions: https.RequestOptions;
+  protected readonly defaultRequestOptions: https.RequestOptions;
 
   /**
    * @param {VtexCredentials} vtexCredentials
