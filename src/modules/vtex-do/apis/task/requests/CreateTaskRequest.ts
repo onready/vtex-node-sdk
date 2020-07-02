@@ -18,7 +18,7 @@ interface Follower {
 
 export interface CreateTaskRequest {
   target?: Array<Target>;
-  domain: string;
+  domain?: string;
   context?: string;
   name?: string;
   priority?: string;
