@@ -61,8 +61,8 @@ vtex.oms.orders.getOrder('orderId')
     console.log(response.body); // { orderId: 'orderId', ... }
   })
   .catch((error) => {
-    console.log(response.status);
-    console.log(response.body);
+    console.log(error.status);
+    console.log(error.body);
   })
 ```
 
