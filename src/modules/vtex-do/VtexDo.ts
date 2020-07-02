@@ -4,29 +4,17 @@ import { Task } from "./apis/task";
 
 export class VtexDo {
   /**
-   * CrossSelling API
+   * Notes API
    */
-  readonly crossSelling: CrossSelling;
+  readonly note: Note;
 
   /**
    * Search API
    */
-  readonly search: SearchApi;
-
-  /**
-   * Facets API
-   */
-  readonly facets: Facets;
-
-  /**
-   * Autocomplete API
-   */
-  readonly autocomplete: Autocomplete;
+  readonly task: Task;
 
   constructor(vtexHttpClient: VtexHttpClient) {
-    this.crossSelling = new CrossSelling(vtexHttpClient);
-    this.search = new SearchApi(vtexHttpClient);
-    this.facets = new Facets(vtexHttpClient);
-    this.autocomplete = new Autocomplete(vtexHttpClient);
+    this.note = new Note(vtexHttpClient);
+    this.task = new Task(vtexHttpClient);
   }
 }

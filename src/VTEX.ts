@@ -10,6 +10,7 @@ import {
   PaymentsGateway,
   VtexPaymentsHttpClient,
 } from "./modules/payments-gateway";
+import { VtexDo } from "./modules/vtex-do";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -70,6 +71,12 @@ export class VTEX {
   readonly paymentsGateway: PaymentsGateway;
 
   /**
+   * VTEX Do Module
+   */
+
+  readonly vtexDo: VtexDo;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -100,5 +107,6 @@ export class VTEX {
     this.paymentsGateway = new PaymentsGateway(
       new VtexPaymentsHttpClient(vtexCredentials)
     );
+    this.vtexDo = new VtexDo(vtexHttpClient);
   }
 }
