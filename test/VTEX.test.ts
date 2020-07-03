@@ -74,6 +74,9 @@ describe("VTEX tests", () => {
       expect(instance.paymentsGateway.transactionProcess).not.toBe(null);
       expect(instance.paymentsGateway.transactionFlow).not.toBe(null);
 
+      expect(instance.vtexDo.task).not.toBe(null);
+      expect(instance.vtexDo.note).not.toBe(null);
+    
       expect(instance.suggestions).not.toBe(null);
       expect(instance.suggestions.feed).not.toBe(null);
       expect(instance.suggestions.send).not.toBe(null);

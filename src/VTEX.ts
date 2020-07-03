@@ -10,6 +10,7 @@ import {
   PaymentsGateway,
   VtexPaymentsHttpClient,
 } from "./modules/payments-gateway";
+import { VtexDo } from "./modules/vtex-do";
 import { Suggestions } from "./modules/suggestions";
 
 export class VTEX {
@@ -71,6 +72,11 @@ export class VTEX {
   readonly paymentsGateway: PaymentsGateway;
 
   /**
+   * VTEX Do Module
+   */
+  readonly vtexDo: VtexDo;
+
+  /**
    * Suggestions Module
    */
   readonly suggestions: Suggestions;
@@ -106,6 +112,7 @@ export class VTEX {
     this.paymentsGateway = new PaymentsGateway(
       new VtexPaymentsHttpClient(vtexCredentials)
     );
+    this.vtexDo = new VtexDo(vtexHttpClient);
     this.suggestions = new Suggestions(vtexHttpClient);
   }
 }
