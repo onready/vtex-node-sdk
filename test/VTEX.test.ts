@@ -84,6 +84,10 @@ describe("VTEX tests", () => {
 
       expect(instance.cms).not.toBe(null);
       expect(instance.cms.changeUriSchema).not.toBe(null);
+
+      expect(instance.sessionManager).not.toBe(null);
+      expect(instance.sessionManager.sessions).not.toBe(null);
+      expect(instance.sessionManager.segment).not.toBe(null);
       done();
     }));
 
