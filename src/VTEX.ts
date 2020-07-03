@@ -75,7 +75,7 @@ export class VTEX {
    * VTEX Do Module
    */
   readonly vtexDo: VtexDo;
-  
+
   /**
    * Suggestions Module
    */
