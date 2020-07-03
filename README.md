@@ -61,8 +61,8 @@ vtex.oms.orders.getOrder('orderId')
     console.log(response.body); // { orderId: 'orderId', ... }
   })
   .catch((error) => {
-    console.log(response.status);
-    console.log(response.body);
+    console.log(error.status);
+    console.log(error.body);
   })
 ```
 
@@ -113,4 +113,4 @@ Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
 Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
-VTEX DO  | :x: |
+VTEX DO  | :white_check_mark: |
