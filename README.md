@@ -100,7 +100,7 @@ Master Data (V2) | :white_check_mark: (*) <em>Attachments API pending</em> |
 Catalog | :white_check_mark: |
 Search  | :white_check_mark: |
 Payments Gateway  | :white_check_mark: |
-Suggestions  | Comming soon... |
+Suggestions  | :white_check_mark: |
 Antifraud Provider | :x: |
 Checkout | :x: |
 CMS | :x: |
