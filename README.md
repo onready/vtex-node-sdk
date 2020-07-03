@@ -101,9 +101,10 @@ Catalog | :white_check_mark: |
 Search  | :white_check_mark: |
 Payments Gateway  | :white_check_mark: |
 Suggestions  | :white_check_mark: |
+VTEX DO  | :white_check_mark: |
+CMS | :white_check_mark: |
 Antifraud Provider | :x: |
 Checkout | :x: |
-CMS | :x: |
 Customer Credit | :x: |
 Giftcard | :x: |
 Giftcard Hub | :x: |
@@ -113,4 +114,3 @@ Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
 Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
-VTEX DO  | :white_check_mark: |
