@@ -1,14 +1,29 @@
-export class VtexHttpResponse<T = any> {
-  status: number;
+import { IncomingHttpHeaders } from "http";
 
-  body: T;
+export class VtexHttpResponse<T = any> {
+  /**
+   * Response status
+   */
+  readonly status: number;
+
+  /**
+   * Response body
+   */
+  readonly body: T;
+
+  /**
+   * Response headers
+   */
+  readonly headers: IncomingHttpHeaders;
 
   /**
    * @param {number} status
    * @param {T} body
+   * @param {IncomingHttpHeaders} headers
    */
-  constructor(status: number, body: T) {
+  constructor(status: number, body: T, headers: IncomingHttpHeaders) {
     this.status = status;
     this.body = body;
+    this.headers = headers;
   }
 }

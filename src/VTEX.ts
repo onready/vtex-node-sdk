@@ -13,6 +13,7 @@ import {
 import { VtexDo } from "./modules/vtex-do";
 import { Suggestions } from "./modules/suggestions";
 import { CMS } from "./modules/CMS";
+import { SessionManager } from "./modules/session-manager";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -88,6 +89,11 @@ export class VTEX {
   readonly cms: CMS;
 
   /**
+   * Session Manager Module
+   */
+  readonly sessionManager: SessionManager;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -121,5 +127,6 @@ export class VTEX {
     this.vtexDo = new VtexDo(vtexHttpClient);
     this.suggestions = new Suggestions(vtexHttpClient);
     this.cms = new CMS(vtexHttpClient);
+    this.sessionManager = new SessionManager(vtexHttpClient);
   }
 }

@@ -103,6 +103,7 @@ Payments Gateway  | :white_check_mark: |
 Suggestions  | :white_check_mark: |
 VTEX DO  | :white_check_mark: |
 CMS | :white_check_mark: |
+Session Manager  | :white_check_mark: |
 Antifraud Provider | :x: |
 Checkout | :x: |
 Customer Credit | :x: |
@@ -112,5 +113,4 @@ Giftcard Provider Protocol | :x: |
 License Manager | :x: |
 Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
-Session Manager  | :x: |
 Subscriptions (V2)  | :x: |
