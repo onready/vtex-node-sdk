@@ -6,10 +6,13 @@ import { VtexHttpResponse } from "./VtexHttpResponse";
 export class VtexHttpClient {
   protected readonly defaultRequestOptions: https.RequestOptions;
 
+  readonly vtexCredentials: VtexCredentials;
+
   /**
    * @param {VtexCredentials} vtexCredentials
    */
   constructor(vtexCredentials: VtexCredentials) {
+    this.vtexCredentials = vtexCredentials;
     this.defaultRequestOptions = {
       hostname: `${vtexCredentials.store}.vtexcommerce${vtexCredentials.environment}.com.br`,
       port: 443,

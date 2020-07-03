@@ -38,9 +38,9 @@
     "prepublishOnly": "yarn lint && yarn test && yarn build"
   },
   "devDependencies": {
-    "@babel/core": "7.10.3",
-    "@babel/preset-env": "7.10.3",
-    "@babel/preset-typescript": "7.10.1",
+    "@babel/core": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
     "@types/jest": "26.0.3",
     "@types/node": "14.0.14",
     "@typescript-eslint/eslint-plugin": "3.5.0",
@@ -53,11 +53,11 @@
     "eslint-plugin-jest": "23.17.1",
     "eslint-plugin-prettier": "3.1.4",
     "jest": "26.1.0",
-    "nock": "13.0.0",
+    "nock": "13.0.2",
     "prettier": "2.0.5",
     "rimraf": "3.0.2",
     "ts-jest": "26.1.1",
-    "typescript": "3.9.5"
+    "typescript": "3.9.6"
   },
   "engines": {
     "node": ">=8.0.0"
