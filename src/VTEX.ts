@@ -11,6 +11,7 @@ import {
   VtexPaymentsHttpClient,
 } from "./modules/payments-gateway";
 import { VtexDo } from "./modules/vtex-do";
+import { Suggestions } from "./modules/suggestions";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -73,8 +74,12 @@ export class VTEX {
   /**
    * VTEX Do Module
    */
-
   readonly vtexDo: VtexDo;
+  
+  /**
+   * Suggestions Module
+   */
+  readonly suggestions: Suggestions;
 
   /**
    * @param {string} store
@@ -108,5 +113,6 @@ export class VTEX {
       new VtexPaymentsHttpClient(vtexCredentials)
     );
     this.vtexDo = new VtexDo(vtexHttpClient);
+    this.suggestions = new Suggestions(vtexHttpClient);
   }
 }
