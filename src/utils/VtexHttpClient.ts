@@ -69,7 +69,8 @@ export class VtexHttpClient {
               }
               const vtexHttpResponse: VtexHttpResponse = new VtexHttpResponse(
                 response.statusCode,
-                jsonResponse
+                jsonResponse,
+                response.headers
               );
               if (response.statusCode < 400) {
                 resolve(vtexHttpResponse);
