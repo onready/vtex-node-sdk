@@ -1,6 +1,6 @@
 {
   "name": "@onreadydesa/vtex-node-sdk",
-  "version": "1.8.0-beta",
+  "version": "1.9.0-beta",
   "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
   "private": false,
@@ -34,7 +34,7 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest",
-    "lint": "eslint \"./src/**/*.ts\"",
+    "lint": "eslint \"./src/**/*.ts\" && eslint \"./test/**/*.ts\"",
     "prepublishOnly": "yarn lint && yarn test && yarn build"
   },
   "devDependencies": {
