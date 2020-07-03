@@ -12,6 +12,7 @@ import {
 } from "./modules/payments-gateway";
 import { VtexDo } from "./modules/vtex-do";
 import { Suggestions } from "./modules/suggestions";
+import { CMS } from "./modules/CMS";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -82,6 +83,11 @@ export class VTEX {
   readonly suggestions: Suggestions;
 
   /**
+   * CMS Module
+   */
+  readonly cms: CMS;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -114,5 +120,6 @@ export class VTEX {
     );
     this.vtexDo = new VtexDo(vtexHttpClient);
     this.suggestions = new Suggestions(vtexHttpClient);
+    this.cms = new CMS(vtexHttpClient);
   }
 }
