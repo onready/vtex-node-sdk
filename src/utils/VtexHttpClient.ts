@@ -65,7 +65,7 @@ export class VtexHttpClient {
               try {
                 jsonResponse = JSON.parse(responseBody);
               } catch (error) {
-                jsonResponse = null;
+                jsonResponse = responseBody;
               }
               const vtexHttpResponse: VtexHttpResponse = new VtexHttpResponse(
                 response.statusCode,
