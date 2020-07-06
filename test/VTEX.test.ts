@@ -94,6 +94,7 @@ describe("VTEX tests", () => {
       expect(instance.licenseManager.roles).not.toBe(null);
       expect(instance.licenseManager.appKeys).not.toBe(null);
       expect(instance.licenseManager.accessControl).not.toBe(null);
+      expect(instance.licenseManager.store).not.toBe(null);
       done();
     }));
 
