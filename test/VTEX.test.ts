@@ -88,6 +88,14 @@ describe("VTEX tests", () => {
       expect(instance.sessionManager).not.toBe(null);
       expect(instance.sessionManager.sessions).not.toBe(null);
       expect(instance.sessionManager.segment).not.toBe(null);
+
+      expect(instance.licenseManager).not.toBe(null);
+      expect(instance.licenseManager.user).not.toBe(null);
+      expect(instance.licenseManager.roles).not.toBe(null);
+      expect(instance.licenseManager.appKeys).not.toBe(null);
+      expect(instance.licenseManager.accessControl).not.toBe(null);
+      expect(instance.licenseManager.store).not.toBe(null);
+      expect(instance.licenseManager.account).not.toBe(null);
       done();
     }));
 
