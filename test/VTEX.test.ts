@@ -100,6 +100,7 @@ describe("VTEX tests", () => {
       expect(instance.customerCredit).not.toBe(null);
       expect(instance.customerCredit.invoices).not.toBe(null);
       expect(instance.customerCredit.account).not.toBe(null);
+      expect(instance.customerCredit.storeConfiguration).not.toBe(null);
       done();
     }));
 
