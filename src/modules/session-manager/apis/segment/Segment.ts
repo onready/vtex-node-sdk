@@ -12,7 +12,7 @@ export class Segment extends AbstractApi {
    * @param {string} params Example: param1=test&param2=test2
    */
   getSegment(params?: string): Promise<VtexHttpResponse> {
-    const path = `/api/segments?${params}`;
+    const path = `/api/segments?${params || ""}`;
     return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
   }
 }

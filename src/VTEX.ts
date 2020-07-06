@@ -15,6 +15,7 @@ import { Suggestions } from "./modules/suggestions";
 import { CMS } from "./modules/CMS";
 import { SessionManager } from "./modules/session-manager";
 import { LicenseManager } from "./modules/license-manager";
+import { CustomerCredit } from "./modules/customer-credit";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -100,6 +101,11 @@ export class VTEX {
   readonly licenseManager: LicenseManager;
 
   /**
+   * Customer Credit Module
+   */
+  readonly customerCredit: CustomerCredit;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -135,5 +141,6 @@ export class VTEX {
     this.cms = new CMS(vtexHttpClient);
     this.sessionManager = new SessionManager(vtexHttpClient);
     this.licenseManager = new LicenseManager(vtexHttpClient);
+    this.customerCredit = new CustomerCredit(vtexHttpClient);
   }
 }

@@ -105,9 +105,9 @@ VTEX DO  | :white_check_mark: |
 CMS | :white_check_mark: |
 Session Manager  | :white_check_mark: |
 License Manager | :white_check_mark: |
+Customer Credit | :white_check_mark: |
 Antifraud Provider | :x: |
 Checkout | :x: |
-Customer Credit | :x: |
 Giftcard | :x: |
 Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
