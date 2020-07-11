@@ -106,6 +106,7 @@ CMS | :white_check_mark: |
 Session Manager  | :white_check_mark: |
 License Manager | :white_check_mark: |
 Customer Credit | :white_check_mark: |
+Subscriptions (V2)  | :white_check_mark: |
 Antifraud Provider | :x: |
 Checkout | :x: |
 Giftcard | :x: |
@@ -113,4 +114,3 @@ Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |
 Payment Provider Protocol  | :x: |
 Rates and Benefits  | :x: |
-Subscriptions (V2)  | :x: |
