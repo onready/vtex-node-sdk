@@ -116,6 +116,7 @@ describe("VTEX tests", () => {
       expect(instance.checkout).not.toBe(null);
       expect(instance.checkout.orderForm).not.toBe(null);
       expect(instance.checkout.cartUpdate).not.toBe(null);
+      expect(instance.checkout.customData).not.toBe(null);
       done();
     }));
 
