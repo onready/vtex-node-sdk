@@ -17,6 +17,7 @@ import { SessionManager } from "./modules/session-manager";
 import { LicenseManager } from "./modules/license-manager";
 import { CustomerCredit } from "./modules/customer-credit";
 import { Subscriptions } from "./modules/subscriptions/v2";
+import { RatesAndBenefits } from "./modules/rates-and-benefits";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -112,6 +113,11 @@ export class VTEX {
   readonly subscriptions: Subscriptions;
 
   /**
+   * Rates and Benefits Module
+   */
+  readonly ratesAndBenefits: RatesAndBenefits;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -149,5 +155,6 @@ export class VTEX {
     this.licenseManager = new LicenseManager(vtexHttpClient);
     this.customerCredit = new CustomerCredit(vtexHttpClient);
     this.subscriptions = new Subscriptions(vtexHttpClient);
+    this.ratesAndBenefits = new RatesAndBenefits(vtexHttpClient);
   }
 }
