@@ -105,6 +105,7 @@ describe("VTEX tests", () => {
       expect(instance.subscriptions).not.toBe(null);
       expect(instance.subscriptions.subscriptions).not.toBe(null);
       expect(instance.subscriptions.subscriptionGroup).not.toBe(null);
+      expect(instance.subscriptions.report).not.toBe(null);
       done();
     }));
 
