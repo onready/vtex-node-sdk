@@ -101,6 +101,12 @@ describe("VTEX tests", () => {
       expect(instance.customerCredit.invoices).not.toBe(null);
       expect(instance.customerCredit.account).not.toBe(null);
       expect(instance.customerCredit.storeConfiguration).not.toBe(null);
+
+      expect(instance.subscriptions).not.toBe(null);
+      expect(instance.subscriptions.subscriptions).not.toBe(null);
+      expect(instance.subscriptions.subscriptionGroup).not.toBe(null);
+      expect(instance.subscriptions.report).not.toBe(null);
+      expect(instance.subscriptions.settings).not.toBe(null);
       done();
     }));
 

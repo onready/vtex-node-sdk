@@ -1,6 +1,6 @@
 {
   "name": "@onreadydesa/vtex-node-sdk",
-  "version": "1.12.0-beta",
+  "version": "1.13.0-beta",
   "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
   "private": false,
@@ -41,8 +41,8 @@
     "@babel/core": "7.10.4",
     "@babel/preset-env": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
-    "@types/jest": "26.0.3",
-    "@types/node": "14.0.14",
+    "@types/jest": "26.0.4",
+    "@types/node": "14.0.22",
     "@typescript-eslint/eslint-plugin": "3.6.0",
     "@typescript-eslint/parser": "3.6.0",
     "babel-jest": "26.1.0",
@@ -56,7 +56,7 @@
     "nock": "13.0.2",
     "prettier": "2.0.5",
     "rimraf": "3.0.2",
-    "ts-jest": "26.1.1",
+    "ts-jest": "26.1.2",
     "typescript": "3.9.6"
   },
   "engines": {
