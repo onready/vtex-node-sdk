@@ -101,6 +101,23 @@ describe("VTEX tests", () => {
       expect(instance.customerCredit.invoices).not.toBe(null);
       expect(instance.customerCredit.account).not.toBe(null);
       expect(instance.customerCredit.storeConfiguration).not.toBe(null);
+
+      expect(instance.subscriptions).not.toBe(null);
+      expect(instance.subscriptions.subscriptions).not.toBe(null);
+      expect(instance.subscriptions.subscriptionGroup).not.toBe(null);
+      expect(instance.subscriptions.report).not.toBe(null);
+      expect(instance.subscriptions.settings).not.toBe(null);
+
+      expect(instance.ratesAndBenefits).not.toBe(null);
+      expect(instance.ratesAndBenefits.coupons).not.toBe(null);
+      expect(instance.ratesAndBenefits.benefits).not.toBe(null);
+      expect(instance.ratesAndBenefits.campaigns).not.toBe(null);
+
+      expect(instance.checkout).not.toBe(null);
+      expect(instance.checkout.orderForm).not.toBe(null);
+      expect(instance.checkout.cartUpdate).not.toBe(null);
+      expect(instance.checkout.customData).not.toBe(null);
+      expect(instance.checkout.configuration).not.toBe(null);
       done();
     }));
 
