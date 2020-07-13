@@ -111,6 +111,7 @@ describe("VTEX tests", () => {
       expect(instance.ratesAndBenefits).not.toBe(null);
       expect(instance.ratesAndBenefits.coupons).not.toBe(null);
       expect(instance.ratesAndBenefits.benefits).not.toBe(null);
+      expect(instance.ratesAndBenefits.campaigns).not.toBe(null);
       done();
     }));
 
