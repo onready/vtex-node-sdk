@@ -108,8 +108,8 @@ License Manager | :white_check_mark: |
 Customer Credit | :white_check_mark: |
 Subscriptions (V2)  | :white_check_mark: |
 Rates and Benefits  | :white_check_mark: |
+Checkout | :white_check_mark: |
 Antifraud Provider | :x: |
-Checkout | :x: |
 Giftcard | :x: |
 Giftcard Hub | :x: |
 Giftcard Provider Protocol | :x: |

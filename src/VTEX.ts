@@ -18,6 +18,7 @@ import { LicenseManager } from "./modules/license-manager";
 import { CustomerCredit } from "./modules/customer-credit";
 import { Subscriptions } from "./modules/subscriptions/v2";
 import { RatesAndBenefits } from "./modules/rates-and-benefits";
+import { Checkout } from "./modules/checkout";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -118,6 +119,11 @@ export class VTEX {
   readonly ratesAndBenefits: RatesAndBenefits;
 
   /**
+   * Checkout Module
+   */
+  readonly checkout: Checkout;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -156,5 +162,6 @@ export class VTEX {
     this.customerCredit = new CustomerCredit(vtexHttpClient);
     this.subscriptions = new Subscriptions(vtexHttpClient);
     this.ratesAndBenefits = new RatesAndBenefits(vtexHttpClient);
+    this.checkout = new Checkout(vtexHttpClient);
   }
 }
