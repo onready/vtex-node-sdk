@@ -11,24 +11,33 @@ export class Configuration extends AbstractApi {
 
   /**
    * Returns all affiliations that your provider can handle.
+   * @param {object} additionalHeaders
    */
-  affiliations(): Promise<VtexHttpResponse> {
+  affiliations(additionalHeaders?: object): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/affiliations`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.GET,
+      null,
+      additionalHeaders
+    );
   }
 
   /**
    * Creates a new affiliation and returns a successful response.
    * @param {InsertAffiliationRequest} affiliationData
+   * @param {object} additionalHeaders
    */
   insertAffiliation(
-    affiliationData: InsertAffiliationRequest
+    affiliationData: InsertAffiliationRequest,
+    additionalHeaders?: object
   ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/affiliations`;
     return this.vtexHttpClient.performRequest(
       path,
       this.HTTP_METHODS.POST,
-      affiliationData
+      affiliationData,
+      additionalHeaders
     );
   }
 
@@ -36,91 +45,141 @@ export class Configuration extends AbstractApi {
    * Updates an existing affiliation.
    * @param {string} affiliationId
    * @param {InsertAffiliationRequest} affiliationData
+   * @param {object} additionalHeaders
    */
   updateAffiliation(
     affiliationId: string,
-    affiliationData: UpdateAffiliationRequest
+    affiliationData: UpdateAffiliationRequest,
+    additionalHeaders?: object
   ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/affiliations/${affiliationId}`;
     return this.vtexHttpClient.performRequest(
       path,
       this.HTTP_METHODS.PUT,
-      affiliationData
+      affiliationData,
+      additionalHeaders
     );
   }
 
   /**
    * Returns associated data for the specified affiliation Id, like name and implementation, for example.
    * @param {string} affiliationId
+   * @param {object} additionalHeaders
    */
-  affiliationById(affiliationId: string): Promise<VtexHttpResponse> {
+  affiliationById(
+    affiliationId: string,
+    additionalHeaders?: object
+  ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/affiliations/${affiliationId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.GET,
+      null,
+      additionalHeaders
+    );
   }
 
   /**
    * Returns all rules conditions your provider can handle.
+   * @param {object} additionalHeaders
    */
-  rules(): Promise<VtexHttpResponse> {
+  rules(additionalHeaders?: object): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/rules`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.GET,
+      null,
+      additionalHeaders
+    );
   }
 
   /**
    * Creates a new rule and returns a successful response.
    * @param {InsertRuleRequest} ruleData
+   * @param {object} additionalHeaders
    */
-  insertRule(ruleData: InsertRuleRequest): Promise<VtexHttpResponse> {
+  insertRule(
+    ruleData: InsertRuleRequest,
+    additionalHeaders?: object
+  ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/rules`;
     return this.vtexHttpClient.performRequest(
       path,
       this.HTTP_METHODS.POST,
-      ruleData
+      ruleData,
+      additionalHeaders
     );
   }
 
   /**
    * Returns rule by specified RuleId.
    * @param {string} ruleId
+   * @param {object} additionalHeaders
    */
-  ruleById(ruleId: string): Promise<VtexHttpResponse> {
+  ruleById(
+    ruleId: string,
+    additionalHeaders?: object
+  ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/rules/${ruleId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.GET,
+      null,
+      additionalHeaders
+    );
   }
 
   /**
    * Updates an existing rule.
    * @param {UpdateRuleRequest} ruleData
+   * @param {object} additionalHeaders
    */
   updateRule(
     ruleId: string,
-    ruleData: UpdateRuleRequest
+    ruleData: UpdateRuleRequest,
+    additionalHeaders?: object
   ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/rules/${ruleId}`;
     return this.vtexHttpClient.performRequest(
       path,
       this.HTTP_METHODS.PUT,
-      ruleData
+      ruleData,
+      additionalHeaders
     );
   }
 
   /**
    * Deletes rules by specified Id.
    * @param {string} ruleId
+   * @param {object} additionalHeaders
    */
-  deleteRule(ruleId: string): Promise<VtexHttpResponse> {
+  deleteRule(
+    ruleId: string,
+    additionalHeaders?: object
+  ): Promise<VtexHttpResponse> {
     const path = `${Configuration.BASE_PATH}/rules/${ruleId}`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.DELETE);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.DELETE,
+      null,
+      additionalHeaders
+    );
   }
 
   /**
    * Returns enabled payment methods, like visa, master, bankissueinvoice that are
    * shown for the final user and enabled to receive payment.
+   * @param {object} additionalHeaders
    */
-  availablePaymentMethods(): Promise<
-    VtexHttpResponse<AvailablePaymentMethodsResponseItem>
-  > {
+  availablePaymentMethods(
+    additionalHeaders?: object
+  ): Promise<VtexHttpResponse<AvailablePaymentMethodsResponseItem>> {
     const path = `${Configuration.BASE_PATH}/merchants/payment-systems`;
-    return this.vtexHttpClient.performRequest(path, this.HTTP_METHODS.GET);
+    return this.vtexHttpClient.performRequest(
+      path,
+      this.HTTP_METHODS.GET,
+      null,
+      additionalHeaders
+    );
   }
 }
