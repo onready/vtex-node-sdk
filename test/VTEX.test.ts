@@ -118,6 +118,10 @@ describe("VTEX tests", () => {
       expect(instance.checkout.cartUpdate).not.toBe(null);
       expect(instance.checkout.customData).not.toBe(null);
       expect(instance.checkout.configuration).not.toBe(null);
+
+      expect(instance.giftCardHub).not.toBe(null);
+      expect(instance.giftCardHub.provider).not.toBe(null);
+
       done();
     }));
 

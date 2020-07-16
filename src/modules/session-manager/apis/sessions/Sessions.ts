@@ -42,11 +42,11 @@ export class Sessions extends AbstractApi {
    * applies the changes instead of generating a new one. As with the POST method,
    * only keys inside the public namespace on the body are considered, and querystrings
    * are automatically added to the public namespace.
-   * @param {any} headers
+   * @param {object} headers
    * @param {CreateNewSessionRequest} newSessionData
    */
   editSession(
-    headers: any,
+    headers: object,
     newSessionData: CreateNewSessionRequest
   ): Promise<VtexHttpResponse> {
     return this.vtexHttpClient.performRequest(

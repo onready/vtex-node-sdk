@@ -29,13 +29,13 @@ export class VtexHttpClient {
    * @param {string} path
    * @param {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} method
    * @param {any} body
-   * @param {any} additionalHeaders
+   * @param {object} additionalHeaders
    */
   performRequest(
     path: string,
     method: string,
     body?: any,
-    additionalHeaders?: any
+    additionalHeaders?: object
   ): Promise<VtexHttpResponse> {
     const defaultRequestOptions = { ...this.defaultRequestOptions };
     if (additionalHeaders) {
