@@ -1,5 +1,6 @@
 import { VtexHttpClient } from "../../utils/VtexHttpClient";
 import { Provider } from "./apis/provider";
+import { Transaction } from "./apis/transaction";
 
 export class GiftCardHub {
   /**
@@ -7,7 +8,13 @@ export class GiftCardHub {
    */
   readonly provider: Provider;
 
+  /**
+   * Transaction API
+   */
+  readonly transaction: Transaction;
+
   constructor(vtexHttpClient: VtexHttpClient) {
     this.provider = new Provider(vtexHttpClient);
+    this.transaction = new Transaction(vtexHttpClient);
   }
 }

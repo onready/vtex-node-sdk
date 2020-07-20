@@ -121,6 +121,7 @@ describe("VTEX tests", () => {
 
       expect(instance.giftCardHub).not.toBe(null);
       expect(instance.giftCardHub.provider).not.toBe(null);
+      expect(instance.giftCardHub.transaction).not.toBe(null);
 
       done();
     }));
