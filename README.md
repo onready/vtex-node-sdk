@@ -110,7 +110,6 @@ Subscriptions (V2)  | :white_check_mark: |
 Rates and Benefits  | :white_check_mark: |
 Checkout | :white_check_mark: |
 Giftcard Hub | :white_check_mark:  |
-Antifraud Provider | :x: |
 Giftcard | :x: |
-Giftcard Provider Protocol | :x: |
-Payment Provider Protocol  | :x: |
+VTEX Tracking API version 1 | :x: |
+VTEX Tracking API version 1.1  | :x: |
