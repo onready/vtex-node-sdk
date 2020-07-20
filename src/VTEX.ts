@@ -19,6 +19,7 @@ import { CustomerCredit } from "./modules/customer-credit";
 import { Subscriptions } from "./modules/subscriptions/v2";
 import { RatesAndBenefits } from "./modules/rates-and-benefits";
 import { Checkout } from "./modules/checkout";
+import { GiftCardHub } from "./modules/giftcard-hub";
 
 export class VTEX {
   private static buildErrorMessage(paramName: string): string {
@@ -124,6 +125,11 @@ export class VTEX {
   readonly checkout: Checkout;
 
   /**
+   * GiftCard Hub Module
+   */
+  readonly giftCardHub: GiftCardHub;
+
+  /**
    * @param {string} store
    * @param {string} appKey
    * @param {string} appToken
@@ -163,5 +169,6 @@ export class VTEX {
     this.subscriptions = new Subscriptions(vtexHttpClient);
     this.ratesAndBenefits = new RatesAndBenefits(vtexHttpClient);
     this.checkout = new Checkout(vtexHttpClient);
+    this.giftCardHub = new GiftCardHub(vtexHttpClient);
   }
 }
