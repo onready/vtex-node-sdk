@@ -1,6 +1,6 @@
 {
   "name": "@onreadydesa/vtex-node-sdk",
-  "version": "1.15.0-beta",
+  "version": "1.16.0-beta",
   "description": "VTEX Node SDK, built 100% with Typescript and 0 dependencies!",
   "author": "Onready",
   "private": false,
