@@ -110,6 +110,6 @@ Subscriptions (V2)  | :white_check_mark: |
 Rates and Benefits  | :white_check_mark: |
 Checkout | :white_check_mark: |
 Giftcard Hub | :white_check_mark:  |
+VTEX Tracking API version 1 | :white_check_mark: |
 Giftcard | :x: |
-VTEX Tracking API version 1 | :x: |
 VTEX Tracking API version 1.1  | :x: |
